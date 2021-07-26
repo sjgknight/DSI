@@ -39,6 +39,7 @@ First, we'll load the required packages, they come with a bunch of built in data
   sh(library(lattice))  #just to illustrate another histogram function 
 library(learnr)
   library(dslabs)
+  library(shiny) #shouldn't be necessary but...
   
   install.packages("remotes")
 remotes::install_github("rstudio-education/gradethis")
