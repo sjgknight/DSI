@@ -1,0 +1,309 @@
+---
+title: "Match the code snippet to questions on data!"
+author: "Simon Knight, sjgknight@gmail.com, modified by Shibani Antonette, antonette.shibani@gmail.com"
+output: learnr::tutorial
+runtime: shiny_prerendered
+description: "Welcome to this learnr tutorial!"
+---
+
+# Match the code to the question
+
+In this notebook, we've got a set of questions. 
+
+**Your challenge is to match the question, to the appropriate code chunk(s).  For charts you _don't_ use, can you explain why not/what's wrong with them?** 
+
+Try and work out what the code chunk will output before you run it.
+
+The code snippets are designed so you could copy them into your own work to do  analyses (if you wanted to), and to demonstrate useful functions. 
+
+# Preliminaries
+Load packages.  If you don't have them installed already, you should uncomment (delete the #) the first line in the following code block (starting 'install.packages')
+
+Once you've done that, you can test the file by using the 'knit' button (in RStudio).
+
+Read more about R markdown and 'kniting' (rendering) documents https://rmarkdown.rstudio.com/authoring_quick_tour.html#overview 
+
+To read documentation and view examples of usage, type ?function_name in console (E.g. ?hist) or search from the help bar in RStudio.
+
+## Load libraries and data
+First, we'll load the required packages, they come with a bunch of built in data, and we're going to use that here.
+
+```{r setup, echo=TRUE}
+#install.packages(c("psych","ggplot2","doBy","reshape2","knitr","lattice"))
+  sh <- suppressPackageStartupMessages #To get rid os warning and other messages while loading the libraries
+  sh(library(ggplot2))  #for graphs and plots
+  sh(library(psych))    #for statistical measures and testing
+  sh(library(doBy))     #for group by analysis
+  sh(library(reshape2)) #for data wrangling
+  sh(library(knitr))    #for rendering markdown
+  sh(library(lattice))  #just to illustrate another histogram function 
+library(learnr)
+  library(dslabs)
+  
+  install.packages("remotes")
+remotes::install_github("rstudio-education/gradethis")
+  library(gradethis)
+gradethis_setup()
+```
+
+
+Q1. What is the relationship between dew point and humidity?
+Q2. Where do the fastest winds flow in Sydney?
+Q3. How does temperature compare in melbourne vs sydney?
+Q4. What kind of relationship is there between visibility and humidity?
+Q5. What weather conditions are seen in melbourne and sydney?
+Q6. How does humidity vary in melbourne vs sydney across months?
+Q7. What weather condition has the lowest humidity?
+====================================================
+====================================================
+Summary stats table
+Comparative histogram (by percent)
+Comparative histogram (by count)
+A fucking dumb 2 column bar chart for the mean (but it doesn't demo what I want)
+Side-by-side boxplots
+Two variables on a line chart over time (where we care about relationship)
+Scatterplot
+Summary table by a stupid number of ordinal categories (clear, drizzle, etc.)
+Or, a count of a similarly stupid number of conditions
+Or (jesus) boxplots for the same
+
+
+I need a dataset from which I can demonstrate:
+(1) A relationship
+(2) temporal feature
+(3) Ordinal data (and lots of categories ideally)
+(4) a 2 factor thing
+
+
+Gapminder  - if I can add another text field for ordinal data?
+
+trump_tweets, happy, 
+
+
+
+
+
+
+
+
+
+
+## Data Exploration
+We are first exploring the dataset to see what it includes
+
+```{r explore datasets}
+
+#View the first 10 rows of the dataset
+head(trump_tweets)
+```
+
+## Plots
+
+An example (a pretty ugly one) of a plot is in the code. We will see how this can be improved later.
+
+```{r basic histograms, echo=TRUE}
+hist(trump_tweets$favorite_count)
+```
+
+## The questions - copy the code chunk(s) that best addresses it under each question
+
+### Q1. What is the relationship between dew point and humidity?
+```{r relationship, exercise = TRUE}
+1+1
+
+```
+
+```{r relationship-solution}
+1+1
+
+```
+
+```{r relationship-code-check}
+grade_code()
+```
+
+
+### Q2. Where do the fastest winds flow in Sydney?
+
+### Q3. How does temperature compare in melbourne vs sydney?
+
+### Q4. What kind of relationship is there between visibility and humidity?
+
+### Q5. What weather conditions are seen in melbourne and sydney?
+
+### Q6. How does humidity vary in melbourne vs sydney across months?
+
+### Q7. What weather condition has the lowest humidity? 
+
+
+## Tables
+We are calculating summary statistics on key variables here. Read about measures of skew and kurtosis here: https://codeburst.io/2-important-statistics-terms-you-need-to-know-in-data-science-skewness-and-kurtosis-388fef94eeaa
+
+```{r Summary of Mel & Sydney weather, echo=T}
+library(knitr)
+
+#kable(rbind(psych::describe(weather_sydney$temp),psych::describe(weather_melbourne$temp)), caption = "Summary of Mel & Sydney weather - Temperature")
+#note, you should label the rows
+
+```
+
+
+```{r Summary of Mel & Sydney Wind, echo=T}
+#kable(rbind(psych::describe(weather_sydney$wind_spd),psych::describe(weather_melbourne$wind_spd)), caption = "Summary of Mel & Sydney weather - Wind Speed")
+
+```
+
+You should notice something wrong in the data... What's going on there?
+
+
+#Code blocks
+
+As in any data analysis, the first step is preparing the raw dataset in the required format by cleaning it.
+Learn more about combining data frames in R here: http://www.programmingr.com/examples/r-dataframe/merge-data-frames/
+
+
+The code blocks do not correspond to the questions asked (Q1 to Q7) directly. Your task is to identify the right ones to match them correctly. Note that additional figures and code that do not an
+
+## Block 1: Summary statistics by category
+```{r ggplot summarystats}
+                            
+#summaryBy(temp~loc, data=temps,FUN=c(min, max, mean, var))
+                                              
+```
+
+## Plots
+
+### Block 2 
+
+```{r base histogram 1}
+
+# histogram(~ temp | loc, data=temps)
+
+```
+
+### Block 3
+```{r ggplot histogram 1}
+# ggplot(temps, aes(x = temp, fill = loc)) + geom_histogram(alpha = .5, position = 'identity') 
+
+```
+
+### Block 4
+
+```{r ggplot histogram 2}
+
+# ggplot(temps, aes(x = temp, fill = loc)) + geom_histogram(alpha = .5, aes(y = ..density..), position = 'identity') #note use of 'density' because we have unequal temperature counts in each dataset, and this lets us understand the data as a percentage over the period. Alpha is the transparency level.
+```
+
+### Block 5
+```{r ggplot average barchart}
+
+ggplot(temps) + 
+  geom_bar(aes(x = loc, y = temp, fill = loc),
+           position = "dodge", stat = "summary", fun.y = "mean")
+```
+
+### Block 6
+```{r ggplot boxplot}
+
+ggplot(temps, aes(x=loc, y=temp, fill=loc)) + geom_boxplot() +
+    guides(fill=FALSE)+
+    stat_summary(fun.y=mean, geom="point", shape=5, size=4)
+```
+
+### Block 7
+```{r ggplot line example}
+#Using the Sydney weather dataframe
+# line_example <- subset(weather_sydney, !is.na(hum), select=c("hum", "dew_pt","date"))
+# line_example[c("hum","dew_pt")] <- lapply(line_example[c("hum","dew_pt")],as.numeric)
+# 
+# line_example <- aggregate(. ~ date, line_example, FUN=mean)
+# 
+# library(reshape2)
+# #convert to long
+# line_example <- melt(line_example, id.vars = c("date"))
+# 
+# ggplot(data=line_example, aes(x=date, y=value, group=variable, colour=variable)) +
+#     geom_line() +
+#     geom_point()
+# 
+# cor.test(as.numeric(weather_sydney$hum),as.numeric(weather_sydney$dew_pt))
+# 
+# #Can you observe a similar relationship in the Melbourne weather dataframe?
+# 
+# #What if we want to explore the relationship between dew_pt and other features
+# #https://support.office.com/en-us/article/Present-your-data-in-a-scatter-chart-or-a-line-chart-4570a80f-599a-4d6b-a155-104a9018b86e
+# 
+# #Is date an important variable in this analysis? Does the scaling of the data gives us the best available insight into relationships of paired values? Is the use of a line to join datapoints appropriate given missing data?
+```
+
+### Block 8
+```{r ggplot scatterplot example}
+# ggplot(weather_sydney, aes(x=hum, y=dew_pt)) +
+#     geom_point(shape=1)      # Use hollow circles
+# 
+# cor.test(as.numeric(weather_sydney$hum),as.numeric(weather_sydney$dew_pt))
+
+```
+
+### Block 9
+```{r ggplot scatterplot2}
+# ggplot(weather_sydney, aes(x=hum, y=vis)) +
+#     geom_point(shape=4)      # Use x to denote data points
+# 
+# cor.test(as.numeric(weather_sydney$hum),as.numeric(weather_sydney$vis))
+
+```
+
+### Block 10
+```{r ggplot side-by-side boxplot}
+
+# weather <- rbind(weather_sydney[c("temp","dew_pt","hum","wind_spd","precip_total","cond","date","loc")],weather_melbourne[c("temp","dew_pt","hum","wind_spd","precip_total","cond","date","loc")])
+# #weather <- subset(weather, temp >-300)
+# weather$month <- format(as.Date(weather$date), "%m")
+# 
+# ggplot(weather, aes(x=month, y=hum, fill=loc)) + geom_boxplot() +
+#     guides(fill=FALSE) +
+#     stat_summary(fun.y=mean, geom="point", shape=5, size=4) +
+#     facet_wrap(~loc)
+
+```
+
+### Block 11
+```{r ggplot summarystats2}
+# summaryBy(hum~cond, data=weather,FUN=c(min, max, mean, var))
+```
+
+### Block 12
+```{r barchart}
+# unique(weather$cond)
+# 
+# table(weather$cond,weather$loc)
+# 
+# weather_con <- unique(subset(weather,select=c("cond","date","loc")))
+# 
+# ggplot(data=weather_con, aes(x=cond, fill = loc)) +
+#     geom_bar(position=position_dodge()) +
+#     theme(axis.text.x = element_text(angle = 90, vjust = .5, hjust = 1))
+
+```
+
+### Block 13
+```{r boxplot2}
+
+# ggplot(weather_sydney, aes(x=dir, y=wind_spd, fill=dir)) + geom_boxplot() +
+#     guides(fill=FALSE)+
+#     stat_summary(fun.y=mean, geom="point", shape=5, size=4)
+    
+```
+
+### Block 14
+```{r barchart2}
+
+# # geom_bar is designed to make it easy to create bar charts that show counts (or sums of weights)
+# 
+# ggplot(data=weather_sydney, aes(x=dir, fill=wind_spd, stat="mean")) +
+#     geom_bar(position= "stack") +
+#     theme(axis.text.x = element_text(angle = 90, vjust = .5, hjust = 1))
+# 
+
+```

@@ -1,0 +1,125 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Preamble and some demonstration functions
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r gitsetup, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+#This block won't be visible on the Rmd (it suppresses messages and warnings, and neither the code nor the output are visible.)
+#To run it, change eval=FALSE to TRUE
+#this doesn't really need to be here, but you should run gitignore
+library(gitignore)
+gi_fetch_templates("R", append_gitignore = TRUE) #you can use this function to get common gitignore templates, particularly useful if you're using other languages. By default when r creates a git repo some of these are in it anyway.
+#To this you might want to add other things like api keys, maybe data, etc.
+#There are a range of ways to do this, for the purpose of this demo it's useful for me to create a script in a private folder that is ignored, and which creates the api keys in my environment.  
+
+#To demonstrate this, we'll add that folder to the gitignore
+write_lines("/private/",".gitignore",sep = "\n", append = TRUE)
+
+#we'll create it
+dir.create("private")
+
+#and then we'll add a file to it, you'll need to change this one (or open the file up and edit it) to add your own keys
+file.create("private/keys.R")
+write_lines(c("",""),"private/keys.R",sep = "\n", append = TRUE)
+
+#Then you can easily run that file like this
+source("private/keys.R")
+```
+
+## First, we're going to load libraries
+Normally you'd hide the code chunk below, but in this instance we'll keep it there.
+```{r load-libraries, echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)  #loads ggplot2, stringr,
+                    #Installing tidyverse includes (but won't load as part of it) readxl,                       jsonlite, lubridate, httr, rvest, xml2, googlesheets4, 
+library(readxl)
+library(jsonlite)
+library(lubridate)
+library(httr)
+
+#these are also useful (in part to demonstrate features)
+library(psych)
+library(doBy)
+library(reshape2)
+library(lattice)
+library(scales)
+library(tidytext)
+
+#SimComp lets me create some random datasets with defined properties
+library(SimComp)  
+
+#The ones below are specifically for this data
+library(dslabs)
+library(trackeR)
+library(trackeRapp)
+
+#library(maptools)
+#library(revgeo)
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+## Garmin
+```{r garmin}
+#uses the library trackeR. See vignette at https://cran.r-project.org/web/packages/trackeR/vignettes/TourDetrackeR.html - read for detail
+#First we're going to load some dummy data. 
+
+#to do this with your own data, you'll need to use the function read_container
+#TO DO THAT YOU SHOULD UNCOMMENT THE FOLLOWING TWO LINES
+#BUT FOR THE PURPOSES OF THIS DEMO I'M JUST GOING TO IMPORT THE PACKAGE DATA
+#filepath <- "private/your_Garmin_export.TCX.gz"
+#runDF <- read_container(filepath, type = "tcx", timezone = "GMT") #check other options
+
+##################################################
+##################################################
+
+runDF <- data(runs)
+plot(runs, session = 1:7)
+
+
+summary(runs, session = 1, moving_threshold = c(cycling = 2, running = 1, swimming = 0.5))
+
+# run_sum <- lapply(runs, function(x){
+#   summary(x, session = 1, moving_threshold = c(cycling = 2, running = 1, swimming = 0.5))
+# })
+```
+
+## Text mining demo
+Show some functions for named entity recognition, sentiment analysis, and other text stuff.
+```{r text mining}
+#using https://rafalab.github.io/dsbook/text-mining.html
+#and https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html 
+
+tweets <- data("trump_tweets") #from the dslabs library
+
+
+
+```
+
+## Image processing Images
+Show some functions for dealing with image data, including image recognition
+```{r images}
+
+```
+
+## EDA and Descriptive Statistics
+Show some...
+```{r EDA}
+
+```
+
+## Other fun examples
+Browser history data, google takeout, facebook data, maps, whatever else.
+```{r examples}
+
+```

@@ -1,0 +1,485 @@
+--- 
+title: "36100 Data Science for Innovation materials"
+author: "Simon Knight"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "This is some of the materials we'll use in the class. These materials were published with the package bookdown::gitbook."
+---
+
+# Prerequisites
+
+This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+
+The **bookdown** package can be installed from CRAN or Github:
+
+```{r eval=FALSE}
+install.packages("bookdown")
+# or the development version
+# devtools::install_github("rstudio/bookdown")
+```
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+<!--chapter:end:index.Rmd-->
+
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Preamble and some demonstration functions
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r gitsetup, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+#This block won't be visible on the Rmd (it suppresses messages and warnings, and neither the code nor the output are visible.)
+#To run it, change eval=FALSE to TRUE
+#this doesn't really need to be here, but you should run gitignore
+library(gitignore)
+gi_fetch_templates("R", append_gitignore = TRUE) #you can use this function to get common gitignore templates, particularly useful if you're using other languages. By default when r creates a git repo some of these are in it anyway.
+#To this you might want to add other things like api keys, maybe data, etc.
+#There are a range of ways to do this, for the purpose of this demo it's useful for me to create a script in a private folder that is ignored, and which creates the api keys in my environment.  
+
+#To demonstrate this, we'll add that folder to the gitignore
+write_lines("/private/",".gitignore",sep = "\n", append = TRUE)
+
+#we'll create it
+dir.create("private")
+
+#and then we'll add a file to it, you'll need to change this one (or open the file up and edit it) to add your own keys
+file.create("private/keys.R")
+write_lines(c("",""),"private/keys.R",sep = "\n", append = TRUE)
+
+#Then you can easily run that file like this
+source("private/keys.R")
+```
+
+## First, we're going to load libraries
+Normally you'd hide the code chunk below, but in this instance we'll keep it there.
+```{r load-libraries, echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)  #loads ggplot2, stringr,
+                    #Installing tidyverse includes (but won't load as part of it) readxl,                       jsonlite, lubridate, httr, rvest, xml2, googlesheets4, 
+library(readxl)
+library(jsonlite)
+library(lubridate)
+library(httr)
+
+#these are also useful (in part to demonstrate features)
+library(psych)
+library(doBy)
+library(reshape2)
+library(lattice)
+library(scales)
+library(tidytext)
+
+#SimComp lets me create some random datasets with defined properties
+library(SimComp)  
+
+#The ones below are specifically for this data
+library(dslabs)
+library(trackeR)
+library(trackeRapp)
+
+#library(maptools)
+#library(revgeo)
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+## Garmin
+```{r garmin}
+#uses the library trackeR. See vignette at https://cran.r-project.org/web/packages/trackeR/vignettes/TourDetrackeR.html - read for detail
+#First we're going to load some dummy data. 
+
+#to do this with your own data, you'll need to use the function read_container
+#TO DO THAT YOU SHOULD UNCOMMENT THE FOLLOWING TWO LINES
+#BUT FOR THE PURPOSES OF THIS DEMO I'M JUST GOING TO IMPORT THE PACKAGE DATA
+#filepath <- "private/your_Garmin_export.TCX.gz"
+#runDF <- read_container(filepath, type = "tcx", timezone = "GMT") #check other options
+
+##################################################
+##################################################
+
+runDF <- data(runs)
+plot(runs, session = 1:7)
+
+
+summary(runs, session = 1, moving_threshold = c(cycling = 2, running = 1, swimming = 0.5))
+
+# run_sum <- lapply(runs, function(x){
+#   summary(x, session = 1, moving_threshold = c(cycling = 2, running = 1, swimming = 0.5))
+# })
+```
+
+## Text mining demo
+Show some functions for named entity recognition, sentiment analysis, and other text stuff.
+```{r text mining}
+#using https://rafalab.github.io/dsbook/text-mining.html
+#and https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html 
+
+tweets <- data("trump_tweets") #from the dslabs library
+
+
+
+```
+
+## Image processing Images
+Show some functions for dealing with image data, including image recognition
+```{r images}
+
+```
+
+## EDA and Descriptive Statistics
+Show some...
+```{r EDA}
+
+```
+
+## Other fun examples
+Browser history data, google takeout, facebook data, maps, whatever else.
+```{r examples}
+
+```
+
+<!--chapter:end:Materials/demo.Rmd-->
+
+---
+title: "Match the code snippet to questions on data!"
+author: "Simon Knight, sjgknight@gmail.com, modified by Shibani Antonette, antonette.shibani@gmail.com"
+output: learnr::tutorial
+runtime: shiny_prerendered
+description: "Welcome to this learnr tutorial!"
+---
+
+# Match the code to the question
+
+In this notebook, we've got a set of questions. 
+
+**Your challenge is to match the question, to the appropriate code chunk(s).  For charts you _don't_ use, can you explain why not/what's wrong with them?** 
+
+Try and work out what the code chunk will output before you run it.
+
+The code snippets are designed so you could copy them into your own work to do  analyses (if you wanted to), and to demonstrate useful functions. 
+
+# Preliminaries
+Load packages.  If you don't have them installed already, you should uncomment (delete the #) the first line in the following code block (starting 'install.packages')
+
+Once you've done that, you can test the file by using the 'knit' button (in RStudio).
+
+Read more about R markdown and 'kniting' (rendering) documents https://rmarkdown.rstudio.com/authoring_quick_tour.html#overview 
+
+To read documentation and view examples of usage, type ?function_name in console (E.g. ?hist) or search from the help bar in RStudio.
+
+## Load libraries and data
+First, we'll load the required packages, they come with a bunch of built in data, and we're going to use that here.
+
+```{r setup, echo=TRUE}
+#install.packages(c("psych","ggplot2","doBy","reshape2","knitr","lattice"))
+  sh <- suppressPackageStartupMessages #To get rid os warning and other messages while loading the libraries
+  sh(library(ggplot2))  #for graphs and plots
+  sh(library(psych))    #for statistical measures and testing
+  sh(library(doBy))     #for group by analysis
+  sh(library(reshape2)) #for data wrangling
+  sh(library(knitr))    #for rendering markdown
+  sh(library(lattice))  #just to illustrate another histogram function 
+library(learnr)
+  library(dslabs)
+  
+  install.packages("remotes")
+remotes::install_github("rstudio-education/gradethis")
+  library(gradethis)
+gradethis_setup()
+```
+
+
+Q1. What is the relationship between dew point and humidity?
+Q2. Where do the fastest winds flow in Sydney?
+Q3. How does temperature compare in melbourne vs sydney?
+Q4. What kind of relationship is there between visibility and humidity?
+Q5. What weather conditions are seen in melbourne and sydney?
+Q6. How does humidity vary in melbourne vs sydney across months?
+Q7. What weather condition has the lowest humidity?
+====================================================
+====================================================
+Summary stats table
+Comparative histogram (by percent)
+Comparative histogram (by count)
+A fucking dumb 2 column bar chart for the mean (but it doesn't demo what I want)
+Side-by-side boxplots
+Two variables on a line chart over time (where we care about relationship)
+Scatterplot
+Summary table by a stupid number of ordinal categories (clear, drizzle, etc.)
+Or, a count of a similarly stupid number of conditions
+Or (jesus) boxplots for the same
+
+
+I need a dataset from which I can demonstrate:
+(1) A relationship
+(2) temporal feature
+(3) Ordinal data (and lots of categories ideally)
+(4) a 2 factor thing
+
+
+Gapminder  - if I can add another text field for ordinal data?
+
+trump_tweets, happy, 
+
+
+
+
+
+
+
+
+
+
+## Data Exploration
+We are first exploring the dataset to see what it includes
+
+```{r explore datasets}
+
+#View the first 10 rows of the dataset
+head(trump_tweets)
+```
+
+## Plots
+
+An example (a pretty ugly one) of a plot is in the code. We will see how this can be improved later.
+
+```{r basic histograms, echo=TRUE}
+hist(trump_tweets$favorite_count)
+```
+
+## The questions - copy the code chunk(s) that best addresses it under each question
+
+### Q1. What is the relationship between dew point and humidity?
+```{r relationship, exercise = TRUE}
+1+1
+
+```
+
+```{r relationship-solution}
+1+1
+
+```
+
+```{r relationship-code-check}
+grade_code()
+```
+
+
+### Q2. Where do the fastest winds flow in Sydney?
+
+### Q3. How does temperature compare in melbourne vs sydney?
+
+### Q4. What kind of relationship is there between visibility and humidity?
+
+### Q5. What weather conditions are seen in melbourne and sydney?
+
+### Q6. How does humidity vary in melbourne vs sydney across months?
+
+### Q7. What weather condition has the lowest humidity? 
+
+
+## Tables
+We are calculating summary statistics on key variables here. Read about measures of skew and kurtosis here: https://codeburst.io/2-important-statistics-terms-you-need-to-know-in-data-science-skewness-and-kurtosis-388fef94eeaa
+
+```{r Summary of Mel & Sydney weather, echo=T}
+library(knitr)
+
+#kable(rbind(psych::describe(weather_sydney$temp),psych::describe(weather_melbourne$temp)), caption = "Summary of Mel & Sydney weather - Temperature")
+#note, you should label the rows
+
+```
+
+
+```{r Summary of Mel & Sydney Wind, echo=T}
+#kable(rbind(psych::describe(weather_sydney$wind_spd),psych::describe(weather_melbourne$wind_spd)), caption = "Summary of Mel & Sydney weather - Wind Speed")
+
+```
+
+You should notice something wrong in the data... What's going on there?
+
+
+#Code blocks
+
+As in any data analysis, the first step is preparing the raw dataset in the required format by cleaning it.
+Learn more about combining data frames in R here: http://www.programmingr.com/examples/r-dataframe/merge-data-frames/
+
+
+The code blocks do not correspond to the questions asked (Q1 to Q7) directly. Your task is to identify the right ones to match them correctly. Note that additional figures and code that do not an
+
+## Block 1: Summary statistics by category
+```{r ggplot summarystats}
+                            
+#summaryBy(temp~loc, data=temps,FUN=c(min, max, mean, var))
+                                              
+```
+
+## Plots
+
+### Block 2 
+
+```{r base histogram 1}
+
+# histogram(~ temp | loc, data=temps)
+
+```
+
+### Block 3
+```{r ggplot histogram 1}
+# ggplot(temps, aes(x = temp, fill = loc)) + geom_histogram(alpha = .5, position = 'identity') 
+
+```
+
+### Block 4
+
+```{r ggplot histogram 2}
+
+# ggplot(temps, aes(x = temp, fill = loc)) + geom_histogram(alpha = .5, aes(y = ..density..), position = 'identity') #note use of 'density' because we have unequal temperature counts in each dataset, and this lets us understand the data as a percentage over the period. Alpha is the transparency level.
+```
+
+### Block 5
+```{r ggplot average barchart}
+
+ggplot(temps) + 
+  geom_bar(aes(x = loc, y = temp, fill = loc),
+           position = "dodge", stat = "summary", fun.y = "mean")
+```
+
+### Block 6
+```{r ggplot boxplot}
+
+ggplot(temps, aes(x=loc, y=temp, fill=loc)) + geom_boxplot() +
+    guides(fill=FALSE)+
+    stat_summary(fun.y=mean, geom="point", shape=5, size=4)
+```
+
+### Block 7
+```{r ggplot line example}
+#Using the Sydney weather dataframe
+# line_example <- subset(weather_sydney, !is.na(hum), select=c("hum", "dew_pt","date"))
+# line_example[c("hum","dew_pt")] <- lapply(line_example[c("hum","dew_pt")],as.numeric)
+# 
+# line_example <- aggregate(. ~ date, line_example, FUN=mean)
+# 
+# library(reshape2)
+# #convert to long
+# line_example <- melt(line_example, id.vars = c("date"))
+# 
+# ggplot(data=line_example, aes(x=date, y=value, group=variable, colour=variable)) +
+#     geom_line() +
+#     geom_point()
+# 
+# cor.test(as.numeric(weather_sydney$hum),as.numeric(weather_sydney$dew_pt))
+# 
+# #Can you observe a similar relationship in the Melbourne weather dataframe?
+# 
+# #What if we want to explore the relationship between dew_pt and other features
+# #https://support.office.com/en-us/article/Present-your-data-in-a-scatter-chart-or-a-line-chart-4570a80f-599a-4d6b-a155-104a9018b86e
+# 
+# #Is date an important variable in this analysis? Does the scaling of the data gives us the best available insight into relationships of paired values? Is the use of a line to join datapoints appropriate given missing data?
+```
+
+### Block 8
+```{r ggplot scatterplot example}
+# ggplot(weather_sydney, aes(x=hum, y=dew_pt)) +
+#     geom_point(shape=1)      # Use hollow circles
+# 
+# cor.test(as.numeric(weather_sydney$hum),as.numeric(weather_sydney$dew_pt))
+
+```
+
+### Block 9
+```{r ggplot scatterplot2}
+# ggplot(weather_sydney, aes(x=hum, y=vis)) +
+#     geom_point(shape=4)      # Use x to denote data points
+# 
+# cor.test(as.numeric(weather_sydney$hum),as.numeric(weather_sydney$vis))
+
+```
+
+### Block 10
+```{r ggplot side-by-side boxplot}
+
+# weather <- rbind(weather_sydney[c("temp","dew_pt","hum","wind_spd","precip_total","cond","date","loc")],weather_melbourne[c("temp","dew_pt","hum","wind_spd","precip_total","cond","date","loc")])
+# #weather <- subset(weather, temp >-300)
+# weather$month <- format(as.Date(weather$date), "%m")
+# 
+# ggplot(weather, aes(x=month, y=hum, fill=loc)) + geom_boxplot() +
+#     guides(fill=FALSE) +
+#     stat_summary(fun.y=mean, geom="point", shape=5, size=4) +
+#     facet_wrap(~loc)
+
+```
+
+### Block 11
+```{r ggplot summarystats2}
+# summaryBy(hum~cond, data=weather,FUN=c(min, max, mean, var))
+```
+
+### Block 12
+```{r barchart}
+# unique(weather$cond)
+# 
+# table(weather$cond,weather$loc)
+# 
+# weather_con <- unique(subset(weather,select=c("cond","date","loc")))
+# 
+# ggplot(data=weather_con, aes(x=cond, fill = loc)) +
+#     geom_bar(position=position_dodge()) +
+#     theme(axis.text.x = element_text(angle = 90, vjust = .5, hjust = 1))
+
+```
+
+### Block 13
+```{r boxplot2}
+
+# ggplot(weather_sydney, aes(x=dir, y=wind_spd, fill=dir)) + geom_boxplot() +
+#     guides(fill=FALSE)+
+#     stat_summary(fun.y=mean, geom="point", shape=5, size=4)
+    
+```
+
+### Block 14
+```{r barchart2}
+
+# # geom_bar is designed to make it easy to create bar charts that show counts (or sums of weights)
+# 
+# ggplot(data=weather_sydney, aes(x=dir, fill=wind_spd, stat="mean")) +
+#     geom_bar(position= "stack") +
+#     theme(axis.text.x = element_text(angle = 90, vjust = .5, hjust = 1))
+# 
+
+```
+
+<!--chapter:end:Materials/snippet_matchR.Rmd-->
+
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:06-references.Rmd-->
+
