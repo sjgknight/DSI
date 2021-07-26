@@ -1,0 +1,8 @@
+prerequisites
+preamble-and-some-demonstration-functions
+first-were-going-to-load-libraries
+garmin
+text-mining-demo
+image-processing-images
+eda-and-descriptive-statistics
+other-fun-examples
