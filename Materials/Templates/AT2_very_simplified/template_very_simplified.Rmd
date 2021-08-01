@@ -86,4 +86,9 @@ If you are submitting any additional materials, such as short multimedia present
 
 Diagrams, figures, charts and illustrations must be labelled, and explained, and must be referred to from somewhere in the report. If drawn from another source, then the source must be provided. 
 
+# The ODI Canvas
+You can download it and include it like this (play around with the settings to make it display sensibly). You can also include it as a html file, etc.
 
+```{r add_ODI, echo=FALSE, out.width="100%"}
+knitr::include_graphics("../DSI_copy_ODI_Data_Ethics_Canvas.pdf")
+```

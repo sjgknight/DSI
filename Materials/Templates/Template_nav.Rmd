@@ -1,0 +1,10 @@
+---
+title: "Template_nav"
+author: "sjgknight"
+date: "01/08/2021"
+output: html_document
+---
+
+```{r, child=c('AT2_flex_demo/AT2_flex_demo.Rmd', 'AT2_medium_master/AT2_template (medium).Rmd')}
+
+``````
