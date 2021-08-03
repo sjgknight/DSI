@@ -404,49 +404,52 @@ Let’s embed a UTS logo, which I’ve saved to the <code>data</code> folder.</p
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="simplified-template-for-dsi-at2.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Explore using base R techniques</span></span>
 <span id="cb18-2"><a href="simplified-template-for-dsi-at2.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(weather_sydney) <span class="co"># First few rows of the weather_sydney table</span></span></code></pre></div>
 <pre><code>## # A tibble: 6 x 22
-##      X1 date                 temp dew_pt   hum wind_spd wind_gust dir     vis pressure wind_chill heat_index
-##   &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;lgl&gt;           &lt;dbl&gt;
-## 1     1 2018-02-08 00:00:00    23     15    52     16.7        NA North    30     1020 NA                 NA
-## 2     2 2018-02-08 00:00:00    23     15    61     16.7        NA North    NA     1020 NA                 NA
-## 3     3 2018-02-08 00:30:00    22     15    64     13          NA NNW      NA     1020 NA                 NA
-## 4     4 2018-02-08 01:00:00    22     15    56     11.1        NA NNW      NA     1020 NA                 NA
-## 5     5 2018-02-08 01:00:00    22     15    64     11.1        NA NNW      NA     1020 NA                 NA
-## 6     6 2018-02-08 01:30:00    22     15    64     13          NA North    NA     1019 NA                 NA
-## # ... with 10 more variables: precip &lt;lgl&gt;, precip_rate &lt;lgl&gt;, precip_total &lt;lgl&gt;, cond &lt;chr&gt;, fog &lt;dbl&gt;,
-## #   rain &lt;dbl&gt;, snow &lt;dbl&gt;, hail &lt;dbl&gt;, thunder &lt;dbl&gt;, tornado &lt;dbl&gt;</code></pre>
+##      X1 date                 temp dew_pt   hum wind_spd wind_gust dir     vis
+##   &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+## 1     1 2018-02-08 00:00:00    23     15    52     16.7        NA North    30
+## 2     2 2018-02-08 00:00:00    23     15    61     16.7        NA North    NA
+## 3     3 2018-02-08 00:30:00    22     15    64     13          NA NNW      NA
+## 4     4 2018-02-08 01:00:00    22     15    56     11.1        NA NNW      NA
+## 5     5 2018-02-08 01:00:00    22     15    64     11.1        NA NNW      NA
+## 6     6 2018-02-08 01:30:00    22     15    64     13          NA North    NA
+## # ... with 13 more variables: pressure &lt;dbl&gt;, wind_chill &lt;lgl&gt;,
+## #   heat_index &lt;dbl&gt;, precip &lt;lgl&gt;, precip_rate &lt;lgl&gt;, precip_total &lt;lgl&gt;,
+## #   cond &lt;chr&gt;, fog &lt;dbl&gt;, rain &lt;dbl&gt;, snow &lt;dbl&gt;, hail &lt;dbl&gt;, thunder &lt;dbl&gt;,
+## #   tornado &lt;dbl&gt;</code></pre>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="simplified-template-for-dsi-at2.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(weather_sydney) <span class="co"># Number of rows and columns</span></span></code></pre></div>
 <pre><code>## [1] 2206   22</code></pre>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="simplified-template-for-dsi-at2.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(weather_sydney) <span class="co">#Column names</span></span></code></pre></div>
-<pre><code>##  [1] &quot;X1&quot;           &quot;date&quot;         &quot;temp&quot;         &quot;dew_pt&quot;       &quot;hum&quot;          &quot;wind_spd&quot;     &quot;wind_gust&quot;   
-##  [8] &quot;dir&quot;          &quot;vis&quot;          &quot;pressure&quot;     &quot;wind_chill&quot;   &quot;heat_index&quot;   &quot;precip&quot;       &quot;precip_rate&quot; 
-## [15] &quot;precip_total&quot; &quot;cond&quot;         &quot;fog&quot;          &quot;rain&quot;         &quot;snow&quot;         &quot;hail&quot;         &quot;thunder&quot;     
-## [22] &quot;tornado&quot;</code></pre>
+<pre><code>##  [1] &quot;X1&quot;           &quot;date&quot;         &quot;temp&quot;         &quot;dew_pt&quot;       &quot;hum&quot;         
+##  [6] &quot;wind_spd&quot;     &quot;wind_gust&quot;    &quot;dir&quot;          &quot;vis&quot;          &quot;pressure&quot;    
+## [11] &quot;wind_chill&quot;   &quot;heat_index&quot;   &quot;precip&quot;       &quot;precip_rate&quot;  &quot;precip_total&quot;
+## [16] &quot;cond&quot;         &quot;fog&quot;          &quot;rain&quot;         &quot;snow&quot;         &quot;hail&quot;        
+## [21] &quot;thunder&quot;      &quot;tornado&quot;</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="simplified-template-for-dsi-at2.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Explore using techniques from the tidyverse package</span></span>
 <span id="cb24-2"><a href="simplified-template-for-dsi-at2.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(weather_sydney) <span class="co"># Does all of the above base R techniques, but neater</span></span></code></pre></div>
 <pre><code>## Rows: 2,206
 ## Columns: 22
-## $ X1           &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, ~
-## $ date         &lt;dttm&gt; 2018-02-08 00:00:00, 2018-02-08 00:00:00, 2018-02-08 00:30:00, 2018-02-08 01:00:00, 20~
-## $ temp         &lt;dbl&gt; 23, 23, 22, 22, 22, 22, 22, 22, 22, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22,~
-## $ dew_pt       &lt;dbl&gt; 15, 15, 15, 15, 15, 15, 16, 16, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 15, 15, 15,~
-## $ hum          &lt;dbl&gt; 52, 61, 64, 56, 64, 64, 60, 69, 64, 62, 68, 68, 62, 68, 73, 62, 73, 73, 66, 68, 55, 64,~
-## $ wind_spd     &lt;dbl&gt; 16.7, 16.7, 13.0, 11.1, 11.1, 13.0, 11.1, 11.1, 11.1, 9.3, 9.3, 9.3, 9.3, 9.3, 9.3, 11.~
-## $ wind_gust    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
-## $ dir          &lt;chr&gt; &quot;North&quot;, &quot;North&quot;, &quot;NNW&quot;, &quot;NNW&quot;, &quot;NNW&quot;, &quot;North&quot;, &quot;NNW&quot;, &quot;NNW&quot;, &quot;NNW&quot;, &quot;NW&quot;, &quot;NW&quot;, &quot;North~
-## $ vis          &lt;dbl&gt; 30, NA, NA, NA, NA, NA, NA, NA, NA, 30, NA, NA, NA, NA, NA, NA, NA, 10, 30, 10, NA, 10,~
-## $ pressure     &lt;dbl&gt; 1020, 1020, 1020, 1020, 1020, 1019, 1020, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 101~
-## $ wind_chill   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
-## $ heat_index   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
-## $ precip       &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
-## $ precip_rate  &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
-## $ precip_total &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
-## $ cond         &lt;chr&gt; &quot;Partly Cloudy&quot;, &quot;Clear&quot;, &quot;Clear&quot;, NA, &quot;Clear&quot;, &quot;Clear&quot;, NA, &quot;Clear&quot;, &quot;Clear&quot;, &quot;Partly ~
-## $ fog          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ rain         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ snow         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ hail         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ thunder      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ tornado      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</code></pre>
+## $ X1           &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17~
+## $ date         &lt;dttm&gt; 2018-02-08 00:00:00, 2018-02-08 00:00:00, 2018-02-08 00:~
+## $ temp         &lt;dbl&gt; 23, 23, 22, 22, 22, 22, 22, 22, 22, 21, 21, 21, 21, 21, 2~
+## $ dew_pt       &lt;dbl&gt; 15, 15, 15, 15, 15, 15, 16, 16, 15, 15, 15, 15, 15, 15, 1~
+## $ hum          &lt;dbl&gt; 52, 61, 64, 56, 64, 64, 60, 69, 64, 62, 68, 68, 62, 68, 7~
+## $ wind_spd     &lt;dbl&gt; 16.7, 16.7, 13.0, 11.1, 11.1, 13.0, 11.1, 11.1, 11.1, 9.3~
+## $ wind_gust    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ dir          &lt;chr&gt; &quot;North&quot;, &quot;North&quot;, &quot;NNW&quot;, &quot;NNW&quot;, &quot;NNW&quot;, &quot;North&quot;, &quot;NNW&quot;, &quot;N~
+## $ vis          &lt;dbl&gt; 30, NA, NA, NA, NA, NA, NA, NA, NA, 30, NA, NA, NA, NA, N~
+## $ pressure     &lt;dbl&gt; 1020, 1020, 1020, 1020, 1020, 1019, 1020, 1019, 1019, 101~
+## $ wind_chill   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ heat_index   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ precip       &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ precip_rate  &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ precip_total &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ cond         &lt;chr&gt; &quot;Partly Cloudy&quot;, &quot;Clear&quot;, &quot;Clear&quot;, NA, &quot;Clear&quot;, &quot;Clear&quot;, ~
+## $ fog          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ rain         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ snow         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ hail         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ thunder      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ tornado      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="simplified-template-for-dsi-at2.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Explore by creating histograms</span></span>
 <span id="cb26-2"><a href="simplified-template-for-dsi-at2.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(weather_sydney<span class="sc">$</span>temp, <span class="at">main =</span> <span class="st">&quot;Sydney weather&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Temp&quot;</span>)</span></code></pre></div>
 <p><img src="36100-Data-Science-for-Innovation_files/figure-html/explore_data-1.png" width="672" /></p>
@@ -463,32 +466,40 @@ Let’s embed a UTS logo, which I’ve saved to the <code>data</code> folder.</p
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="simplified-template-for-dsi-at2.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Category counts</span></span>
 <span id="cb29-2"><a href="simplified-template-for-dsi-at2.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(weather_sydney<span class="sc">$</span>cond) <span class="co"># Count of each condition</span></span></code></pre></div>
 <pre><code>## 
-##                        Clear                      Drizzle                         Haze 
-##                          285                            3                           63 
-##           Heavy Rain Showers                Light Drizzle                   Light Rain 
-##                            2                           11                           40 
-##           Light Rain Showers Light Thunderstorms and Rain                Mostly Cloudy 
-##                           72                            5                          591 
-##                     Overcast                Partly Cloudy                         Rain 
-##                           27                          362                           10 
-##                 Rain Showers             Scattered Clouds                 Thunderstorm 
-##                           13                          247                            1 
-##                      Unknown 
-##                            4</code></pre>
+##                        Clear                      Drizzle 
+##                          285                            3 
+##                         Haze           Heavy Rain Showers 
+##                           63                            2 
+##                Light Drizzle                   Light Rain 
+##                           11                           40 
+##           Light Rain Showers Light Thunderstorms and Rain 
+##                           72                            5 
+##                Mostly Cloudy                     Overcast 
+##                          591                           27 
+##                Partly Cloudy                         Rain 
+##                          362                           10 
+##                 Rain Showers             Scattered Clouds 
+##                           13                          247 
+##                 Thunderstorm                      Unknown 
+##                            1                            4</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="simplified-template-for-dsi-at2.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(weather_sydney<span class="sc">$</span>cond)) <span class="sc">*</span> <span class="dv">100</span> <span class="co"># Percentage of each condition</span></span></code></pre></div>
 <pre><code>## 
-##                        Clear                      Drizzle                         Haze 
-##                  16.41705069                   0.17281106                   3.62903226 
-##           Heavy Rain Showers                Light Drizzle                   Light Rain 
-##                   0.11520737                   0.63364055                   2.30414747 
-##           Light Rain Showers Light Thunderstorms and Rain                Mostly Cloudy 
-##                   4.14746544                   0.28801843                  34.04377880 
-##                     Overcast                Partly Cloudy                         Rain 
-##                   1.55529954                  20.85253456                   0.57603687 
-##                 Rain Showers             Scattered Clouds                 Thunderstorm 
-##                   0.74884793                  14.22811060                   0.05760369 
-##                      Unknown 
-##                   0.23041475</code></pre>
+##                        Clear                      Drizzle 
+##                  16.41705069                   0.17281106 
+##                         Haze           Heavy Rain Showers 
+##                   3.62903226                   0.11520737 
+##                Light Drizzle                   Light Rain 
+##                   0.63364055                   2.30414747 
+##           Light Rain Showers Light Thunderstorms and Rain 
+##                   4.14746544                   0.28801843 
+##                Mostly Cloudy                     Overcast 
+##                  34.04377880                   1.55529954 
+##                Partly Cloudy                         Rain 
+##                  20.85253456                   0.57603687 
+##                 Rain Showers             Scattered Clouds 
+##                   0.74884793                  14.22811060 
+##                 Thunderstorm                      Unknown 
+##                   0.05760369                   0.23041475</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="simplified-template-for-dsi-at2.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code></pre></div>
 </div>
 <div id="example-analysis-explore-data-via-statistical-summaries" class="section level3" number="6.10.3">

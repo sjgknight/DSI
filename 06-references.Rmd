@@ -1,10 +1,10 @@
 ---
 output: bookdown::html_document2
-
 ---
 
-In the template file, this line (wrapped in ``) is used to insert the references. Testing to see if just using the heading works, with a hash before the reference. r if (knitr::is_html_output()) ' References {-}'
+In the template file, this line (wrapped in \`\`) is used to insert the references. Testing to see if just using the heading works, with a hash before the reference. r if (knitr::is_html_output()) ' References {-}'
 
 # References
 
-<div id="refs"></div>
+::: {#refs}
+:::
