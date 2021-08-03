@@ -1,0 +1,22 @@
+---
+title: "Template_nav"
+author: "sjgknight"
+date: "01/08/2021"
+output: html_document
+---
+
+```{r, child=c( 'AT2_very_simplified/template_very_simplified.Rmd')}
+
+```
+
+# The ODI Canvas
+Don't forget to include the data ethics canvas
+You can download it and include it like this (play around with the settings to make it display sensibly). You can also include it as a html file, etc.
+
+```{r add_ODI_2, echo=FALSE, out.width="100%"}
+#knitr::include_graphics("../DSI_copy_ODI_Data_Ethics_Canvas.pdf")
+
+#knitr::include_url("https://docs.google.com/document/d/14qEn_yoOpInUAvA8ndNGMNuhxgywQJ3ODmCKcxYZPGQ/edit?usp=sharing")
+```
+```
+

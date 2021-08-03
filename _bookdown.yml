@@ -2,7 +2,11 @@ book_filename: "36100 Data Science for Innovation"
 language:
   ui:
   chapter_name: "Chapter "
-delete_merged_file: true
+delete_merged_file: false
 output_dir: "docs"
 rmd_files:
-  html: ["index.Rmd", "Materials/demo.Rmd", "06-references.Rmd"]
+  html: ["index.Rmd",
+  "01-demo.Rmd",
+  "Materials/Templates/AT2_very_simplified/template_very_simplified.Rmd",
+  "Materials/Templates/AT2_simplified-master/R/template_simplified.Rmd",
+  "06-references.Rmd"]

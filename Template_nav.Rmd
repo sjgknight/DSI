@@ -1,0 +1,16 @@
+---
+title: "Template_nav"
+author: "sjgknight"
+date: "01/08/2021"
+output: html_document
+---
+
+You have three options for your AT2 template:
+* Very simplified template (first) just embeds images. You'll use a bit of markdown to format things, but all or most of your analysis will be in another program (excel + something to make nicer visualisations perhaps).
+* Simplified template (second) which shows how you can include more of your analysis, and make more use of markdown features
+* Flexdashboard version - this one is more complex...in fact, the demo doesn't function properly. You can explore flexdashboards, and think about how you could setup the report with panels. OR you could embed a flexdashboard as a component in one of the above files.
+
+```{r, child=c( 'Materials/Templates/AT2_very_simplified/template_very_simplified.Rmd','Materials/Templates/AT2_simplified-master/R/template_simplified.Rmd','Materials/Templates/AT2_flex_demo/AT2_template.Rmd')}
+
+```
+

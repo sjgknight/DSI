@@ -1,0 +1,9 @@
+---
+title: "Flex-embed"
+output: html_notebook
+---
+
+```{r emb-flex}
+htmltools::includeHTML("data/AT2_template.html")
+```
+```

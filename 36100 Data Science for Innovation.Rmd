@@ -1,0 +1,113 @@
+--- 
+title: "36100 Data Science for Innovation materials"
+author: "Simon Knight"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib,packages.bib]
+biblio-style: apalike
+link-citations: true
+nocite: | 
+  @*
+github-repo: sjgknight/dsi
+description: "This is some of the materials we'll use in the class. These materials were published with the package bookdown::gitbook."
+---
+
+# Prerequisites
+
+Placeholder
+
+
+## What's in here?
+## For my reference
+
+<!--chapter:end:index.Rmd-->
+
+
+# Preamble
+
+Placeholder
+
+
+## First, we're going to load libraries
+## Garmin
+## Walking data (and covid impacts)
+## Your location
+## Text mining demo
+## Sentiment on text
+## Named entity recognition
+## Image processing Images
+## EDA and Descriptive Statistics
+## Other fun examples
+### search history
+
+<!--chapter:end:01-demo.Rmd-->
+
+
+# Simplified (very) Template for DSI AT2
+
+Placeholder
+
+
+## Title, name, student number etc
+## Introduction
+## Description of process, or method
+## Analysis
+## Findings and conclusions
+## Discussion
+## Reflection
+## References
+## Appendices
+## Other
+## The ODI Canvas
+
+<!--chapter:end:Materials/Templates/AT2_very_simplified/template_very_simplified.Rmd-->
+
+
+# Simplified Template for DSI AT2
+
+Placeholder
+
+
+## Preface: How to use this guide
+## Set up a project
+## Install packages
+## Calculating word length
+## Citations
+## Formatting guide
+### Fonts
+### Headings
+### Lists
+### Equations
+## Embedding an image
+## Introduction
+## Description of process or methods
+## Analysis
+### Example analysis: Get data
+### Example analysis: Explore data
+### Example Analysis: Explore data via statistical summaries
+### Example analysis: Tidy data
+### Example analysis: Create charts for presentation
+## Findings and conclusion
+## Discussion
+## Reflection
+## References
+## Appendices
+## Other
+
+<!--chapter:end:Materials/Templates/AT2_simplified-master/R/template_simplified.Rmd-->
+
+---
+output: bookdown::html_document2
+---
+
+In the template file, this line (wrapped in \`\`) is used to insert the references. Testing to see if just using the heading works, with a hash before the reference. r if (knitr::is_html_output()) ' References {-}'
+
+# References
+
+::: {#refs}
+:::
+
+<!--chapter:end:06-references.Rmd-->
+
