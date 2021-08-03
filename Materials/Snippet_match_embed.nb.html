@@ -220,17 +220,591 @@ pre code {
 <p>This page just embeds the Shiny app hosted at <a href="https://sjgknight.shinyapps.io/Snippet_matchR/" class="uri">https://sjgknight.shinyapps.io/Snippet_matchR/</a> The files for this are included in the github respository, and so you may prefer to run it locally. If doing so, set eval/include as true in the second of these code blocks.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua25pdHI6OmluY2x1ZGVfYXAoXCIgaHR0cHM6Ly9zamdrbmlnaHQuc2hpbnlhcHBzLmlvL1NuaXBwZXRfbWF0Y2hSL1wiLFxuICAgICAgICAgICAgICAgICAgaGVpZ2h0ID0gXCI2MDBweFwiKVxuXG5gYGAifQ== -->
-<pre class="r"><code>knitr::include_ap(&quot; https://sjgknight.shinyapps.io/Snippet_matchR/&quot;,
-                  height = &quot;600px&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1RvbyBsYXJnZT8gRG9lc24ndCB3b3JrIGluIGFueSBjYXNlXG4jIGtuaXRyOjppbmNsdWRlX2FwKFwiIGh0dHBzOi8vc2pna25pZ2h0LnNoaW55YXBwcy5pby9TbmlwcGV0X21hdGNoUi9cIixcbiMgICAgICAgICAgICAgICAgICAgaGVpZ2h0ID0gXCI2MDBweFwiKVxuXG5gYGAifQ== -->
+<pre class="r"><code>#Too large? Doesn&#39;t work in any case
+# knitr::include_ap(&quot; https://sjgknight.shinyapps.io/Snippet_matchR/&quot;,
+#                   height = &quot;600px&quot;)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cbnByb2Nlc3NpbmcgZmlsZTogc25pcHBldF9tYXRjaFIuUm1kXG4ifQ== -->
+<pre><code>
+
+processing file: snippet_matchR.Rmd</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICAwJVxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgMSVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDIlXG5sYWJlbDogc2V0dXAgKHdpdGggb3B0aW9ucykgXG5MaXN0IG9mIDFcbiAkIGVjaG86IGxvZ2kgVFJVRVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDMlXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICA0JVxubGFiZWw6IGZvcl9pbnN0cnVjdG9ycyAod2l0aCBvcHRpb25zKSBcbkxpc3Qgb2YgNFxuICQgZXZhbCAgIDogbG9naSBGQUxTRVxuICQgbWVzc2FnZTogbG9naSBGQUxTRVxuICQgd2FybmluZzogbG9naSBGQUxTRVxuICQgaW5jbHVkZTogbG9naSBGQUxTRVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDUlXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICA3JVxubGFiZWw6IGRyb3BwZWRfY29kZSAod2l0aCBvcHRpb25zKSBcbkxpc3Qgb2YgMlxuICQgZXZhbCAgIDogbG9naSBGQUxTRVxuICQgaW5jbHVkZTogbG9naSBGQUxTRVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDglXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICA5JVxubGFiZWw6IGV4cGxvcmVfZGF0YXNldHMgKHdpdGggb3B0aW9ucykgXG5MaXN0IG9mIDFcbiAkIGV4ZXJjaXNlOiBsb2dpIFRSVUVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDEwJVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAxMSVcbmxhYmVsOiBTdW1tYXJ5IG9mIFJUIGFuZCBGYXZzXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMTIlXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDEzJVxubGFiZWw6IGJhc2ljIGhpc3RvZ3JhbXMgKHdpdGggb3B0aW9ucykgXG5MaXN0IG9mIDFcbiAkIGVjaG86IGxvZ2kgVFJVRVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMTQlXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDE1JVxubGFiZWw6IGV4YW1wbGUgKHdpdGggb3B0aW9ucykgXG5MaXN0IG9mIDFcbiAkIGV4ZXJjaXNlOiBsb2dpIFRSVUVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDE2JVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAxOCVcbmxhYmVsOiBleGFtcGxlLXNvbHV0aW9uXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMTklXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDIwJVxubGFiZWw6IGV4YW1wbGUtY29kZS1jaGVja1xuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDIxJVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAyMiVcbmxhYmVsOiByZWxhdGlvbnNoaXAgKHdpdGggb3B0aW9ucykgXG5MaXN0IG9mIDFcbiAkIGV4ZXJjaXNlOiBsb2dpIFRSVUVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDIzJVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAyNCVcbmxhYmVsOiByZWxhdGlvbnNoaXAtc29sdXRpb25cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAyNSVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMjYlXG5sYWJlbDogcmVsYXRpb25zaGlwLWNvZGUtY2hlY2tcblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAyNyVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMjklXG5sYWJlbDogbWF4ICh3aXRoIG9wdGlvbnMpIFxuTGlzdCBvZiAxXG4gJCBleGVyY2lzZTogbG9naSBUUlVFXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAzMCVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMzElXG5sYWJlbDogbWF4LXNvbHV0aW9uXG4ifQ== -->
+<pre><code>
+  |                                                                                    
+  |                                                                              |   0%
+  |                                                                                    
+  |.                                                                             |   1%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..                                                                            |   2%
+label: setup (with options) 
+List of 1
+ $ echo: logi TRUE
+
+
+  |                                                                                    
+  |...                                                                           |   3%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |...                                                                           |   4%
+label: for_instructors (with options) 
+List of 4
+ $ eval   : logi FALSE
+ $ message: logi FALSE
+ $ warning: logi FALSE
+ $ include: logi FALSE
+
+
+  |                                                                                    
+  |....                                                                          |   5%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.....                                                                         |   7%
+label: dropped_code (with options) 
+List of 2
+ $ eval   : logi FALSE
+ $ include: logi FALSE
+
+
+  |                                                                                    
+  |......                                                                        |   8%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.......                                                                       |   9%
+label: explore_datasets (with options) 
+List of 1
+ $ exercise: logi TRUE
+
+
+  |                                                                                    
+  |........                                                                      |  10%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.........                                                                     |  11%
+label: Summary of RT and Favs
+
+  |                                                                                    
+  |.........                                                                     |  12%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..........                                                                    |  13%
+label: basic histograms (with options) 
+List of 1
+ $ echo: logi TRUE
+
+
+  |                                                                                    
+  |...........                                                                   |  14%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |............                                                                  |  15%
+label: example (with options) 
+List of 1
+ $ exercise: logi TRUE
+
+
+  |                                                                                    
+  |.............                                                                 |  16%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..............                                                                |  18%
+label: example-solution
+
+  |                                                                                    
+  |...............                                                               |  19%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |...............                                                               |  20%
+label: example-code-check
+
+  |                                                                                    
+  |................                                                              |  21%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.................                                                             |  22%
+label: relationship (with options) 
+List of 1
+ $ exercise: logi TRUE
+
+
+  |                                                                                    
+  |..................                                                            |  23%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |...................                                                           |  24%
+label: relationship-solution
+
+  |                                                                                    
+  |....................                                                          |  25%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.....................                                                         |  26%
+label: relationship-code-check
+
+  |                                                                                    
+  |.....................                                                         |  27%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |......................                                                        |  29%
+label: max (with options) 
+List of 1
+ $ exercise: logi TRUE
+
+
+  |                                                                                    
+  |.......................                                                       |  30%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |........................                                                      |  31%
+label: max-solution</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogYGZ1bi55YCBpcyBkZXByZWNhdGVkLiBVc2UgYGZ1bmAgaW5zdGVhZC5cbiJ9 -->
+<pre><code>Warning: `fun.y` is deprecated. Use `fun` instead.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDMyJVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAzMyVcbmxhYmVsOiBtYXgtY29kZS1jaGVja1xuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDM0JVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAzNSVcbmxhYmVsOiBzdW1tYXJ5MSAod2l0aCBvcHRpb25zKSBcbkxpc3Qgb2YgMVxuICQgZXhlcmNpc2U6IGxvZ2kgVFJVRVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMzYlXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDM3JVxubGFiZWw6IHN1bW1hcnkxLXNvbHV0aW9uXG4ifQ== -->
+<pre><code>
+  |                                                                                    
+  |.........................                                                     |  32%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..........................                                                    |  33%
+label: max-code-check
+
+  |                                                                                    
+  |...........................                                                   |  34%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |...........................                                                   |  35%
+label: summary1 (with options) 
+List of 1
+ $ exercise: logi TRUE
+
+
+  |                                                                                    
+  |............................                                                  |  36%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.............................                                                 |  37%
+label: summary1-solution</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogYGZ1bi55YCBpcyBkZXByZWNhdGVkLiBVc2UgYGZ1bmAgaW5zdGVhZC5cbiJ9 -->
+<pre><code>Warning: `fun.y` is deprecated. Use `fun` instead.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDM4JVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICA0MCVcbmxhYmVsOiBzdW1tYXJ5MS1jb2RlLWNoZWNrXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgNDElXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDQyJVxubGFiZWw6IHByb3BzICh3aXRoIG9wdGlvbnMpIFxuTGlzdCBvZiAxXG4gJCBleGVyY2lzZTogbG9naSBUUlVFXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICA0MyVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgNDQlXG5sYWJlbDogcHJvcHMtc29sdXRpb25cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICA0NSVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgNDYlXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgNjAlXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDYyJVxubGFiZWw6IHdvcmRzLWNvZGUtY2hlY2tcblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICA2MyVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgNjQlXG5sYWJlbDogZ2dwbG90IHN1bW1hcnlzdGF0c1xuIn0= -->
+<pre><code>
+  |                                                                                    
+  |..............................                                                |  38%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |...............................                                               |  40%
+label: summary1-code-check
+
+  |                                                                                    
+  |................................                                              |  41%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.................................                                             |  42%
+label: props (with options) 
+List of 1
+ $ exercise: logi TRUE
+
+
+  |                                                                                    
+  |.................................                                             |  43%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..................................                                            |  44%
+label: props-solution
+
+  |                                                                                    
+  |...................................                                           |  45%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |....................................                                          |  46%
+
+  |                                                                                    
+  |...............................................                               |  60%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |................................................                              |  62%
+label: words-code-check
+
+  |                                                                                    
+  |.................................................                             |  63%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..................................................                            |  64%
+label: ggplot summarystats</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogYGZ1bi55YCBpcyBkZXByZWNhdGVkLiBVc2UgYGZ1bmAgaW5zdGVhZC5cbiJ9 -->
+<pre><code>Warning: `fun.y` is deprecated. Use `fun` instead.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgIHwgIDcxJVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICB8ICA3MyVcbmxhYmVsOiBnZ3Bsb3QgYmFyY2hhcnRcblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICB8ICA3NCVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgfCAgNzUlXG5sYWJlbDogZ2dwbG90IHN1bW1hcnlzdGF0cy0yXG4ifQ== -->
+<pre><code>
+  |                                                                                    
+  |........................................................                      |  71%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.........................................................                     |  73%
+label: ggplot barchart
+
+  |                                                                                    
+  |.........................................................                     |  74%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..........................................................                    |  75%
+label: ggplot summarystats-2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogYGZ1bi55YCBpcyBkZXByZWNhdGVkLiBVc2UgYGZ1bmAgaW5zdGVhZC5cbiJ9 -->
+<pre><code>Warning: `fun.y` is deprecated. Use `fun` instead.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgIHwgIDc2JVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICB8ICA3NyVcbmxhYmVsOiBnZ3Bsb3QgbGluZSBleGFtcGxlXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgfCAgNzglXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgIHwgIDc5JVxubGFiZWw6IGdncGxvdCBzY2F0dGVycGxvdCBleGFtcGxlXG5cbiAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICB8Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgfCAgODIlXG4gIG9yZGluYXJ5IHRleHQgd2l0aG91dCBSIGNvZGVcblxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgIHwgIDg0JVxubGFiZWw6IGdncGxvdCBzaWRlLWJ5LXNpZGUgYm94cGxvdFxuIn0= -->
+<pre><code>
+  |                                                                                    
+  |...........................................................                   |  76%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |............................................................                  |  77%
+label: ggplot line example
+
+  |                                                                                    
+  |.............................................................                 |  78%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..............................................................                |  79%
+label: ggplot scatterplot example
+
+  |                                                                                    
+  |................................................................              |  82%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.................................................................             |  84%
+label: ggplot side-by-side boxplot</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogYGZ1bi55YCBpcyBkZXByZWNhdGVkLiBVc2UgYGZ1bmAgaW5zdGVhZC5cbiJ9 -->
+<pre><code>Warning: `fun.y` is deprecated. Use `fun` instead.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgIHwgIDg1JVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICB8ICA4NiVcbmxhYmVsOiBnZ3Bsb3Qgc3VtbWFyeXN0YXRzMlxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgIHwgIDg3JVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICB8ICA4OCVcbmxhYmVsOiBiYXJjaGFydFxuXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgIHwgIDkzJVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICB8ICA5NSVcbmxhYmVsOiB3b3JkY2xvdWRcbiJ9 -->
+<pre><code>
+  |                                                                                    
+  |..................................................................            |  85%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |...................................................................           |  86%
+label: ggplot summarystats2
+
+  |                                                                                    
+  |....................................................................          |  87%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |.....................................................................         |  88%
+label: barchart
+
+  |                                                                                    
+  |.........................................................................     |  93%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |..........................................................................    |  95%
+label: wordcloud</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD04LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTgsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xMicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTInIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTEyJyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xMicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTgsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTInIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9OCwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTInIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9OCwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xMicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTEyJyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xMicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD04LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTEyJyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTInIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTEyJyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xMicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTInIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD04LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTEyJyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTgsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTEyJyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTgsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTYsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTInIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xMicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTE2LCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xNicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTInIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9OCwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuV2FybmluZyBpbiBwbmcoZmlsZW5hbWUgPSB0bXBfZmlsZSwgd2lkdGggPSBnd19waXgsIGhlaWdodCA9IGdoX3BpeCwgcmVzID0gZGV2X2RwaSwgIDpcbiAgJ3dpZHRoPTEyLCBoZWlnaHQ9MTYnIGFyZSB1bmxpa2VseSB2YWx1ZXMgaW4gcGl4ZWxzXG5XYXJuaW5nIGluIHBuZyhmaWxlbmFtZSA9IHRtcF9maWxlLCB3aWR0aCA9IGd3X3BpeCwgaGVpZ2h0ID0gZ2hfcGl4LCByZXMgPSBkZXZfZHBpLCAgOlxuICAnd2lkdGg9MTIsIGhlaWdodD0xMicgYXJlIHVubGlrZWx5IHZhbHVlcyBpbiBwaXhlbHNcbldhcm5pbmcgaW4gcG5nKGZpbGVuYW1lID0gdG1wX2ZpbGUsIHdpZHRoID0gZ3dfcGl4LCBoZWlnaHQgPSBnaF9waXgsIHJlcyA9IGRldl9kcGksICA6XG4gICd3aWR0aD0xNiwgaGVpZ2h0PTEyJyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuXG4gICd3aWR0aD0xMiwgaGVpZ2h0PTE2JyBhcmUgdW5saWtlbHkgdmFsdWVzIGluIHBpeGVsc1xuIn0= -->
+<pre><code>Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=8, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=16&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=12, height=12&#39; are unlikely values in pixels
+Warning in png(filename = tmp_file, width = gw_pix, height = gh_pix, res = dev_dpi,  :
+  &#39;width=16, height=12&#39; are unlikely values in pixels
+
+  &#39;width=12, height=16&#39; are unlikely values in pixels</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgfC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gIHwgIDk4JVxuICBvcmRpbmFyeSB0ZXh0IHdpdGhvdXQgUiBjb2RlXG5cblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiB8ICA5OSVcbmxhYmVsOiB1bm5hbWVkLWNodW5rLTJcblxuICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIHwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi58IDEwMCVcbiAgb3JkaW5hcnkgdGV4dCB3aXRob3V0IFIgY29kZVxuIn0= -->
+<pre><code>
+  |                                                                                    
+  |............................................................................  |  98%
+  ordinary text without R code
+
+
+  |                                                                                    
+  |............................................................................. |  99%
+label: unnamed-chunk-2
+
+  |                                                                                    
+  |..............................................................................| 100%
+  ordinary text without R code</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoib3V0cHV0IGZpbGU6IHNuaXBwZXRfbWF0Y2hSLmtuaXQubWRcbiJ9 -->
+<pre><code>output file: snippet_matchR.knit.md</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXCJDOi9Qcm9ncmFtIEZpbGVzL1JTdHVkaW8vYmluL3BhbmRvYy9wYW5kb2NcIiArUlRTIC1LNTEybSAtUlRTIHNuaXBwZXRfbWF0Y2hSLmtuaXQubWQgLS10byBodG1sNCAtLWZyb20gbWFya2Rvd24rYXV0b2xpbmtfYmFyZV91cmlzK3RleF9tYXRoX3NpbmdsZV9iYWNrc2xhc2ggLS1vdXRwdXQgc25pcHBldF9tYXRjaFIuaHRtbCAtLWx1YS1maWx0ZXIgXCJDOlxcVXNlcnNcXDEyNTI5NVxcRE9DVU1FfjFcXEJPWFNZTn4xXFxPTkVEUkl+MVxcRE9DVU1FfjFcXFJcXFdJTi1MSX4xXFw0LjFcXFJNQVJLRH4xXFxSTUFSS0R+MVxcbHVhXFxQQUdFQlJ+MS5MVUFcIiAtLWx1YS1maWx0ZXIgXCJDOlxcVXNlcnNcXDEyNTI5NVxcRE9DVU1FfjFcXEJPWFNZTn4xXFxPTkVEUkl+MVxcRE9DVU1FfjFcXFJcXFdJTi1MSX4xXFw0LjFcXFJNQVJLRH4xXFxSTUFSS0R+MVxcbHVhXFxMQVRFWC1+MS5MVUFcIiAtLXZhcmlhYmxlIGJzMz1UUlVFIC0tc3RhbmRhbG9uZSAtLXNlY3Rpb24tZGl2cyAtLXRlbXBsYXRlIFwiQzpcXFVzZXJzXFwxMjUyOTVcXERPQ1VNRX4xXFxCT1hTWU5+MVxcT05FRFJJfjFcXERPQ1VNRX4xXFxSXFxXSU4tTEl+MVxcNC4xXFxSTUFSS0R+MVxccm1kXFxoXFxERUZBVUx+MS5IVE1cIiAtLW5vLWhpZ2hsaWdodCAtLXZhcmlhYmxlIGhpZ2hsaWdodGpzPTEgLS1zZWN0aW9uLWRpdnMgLS10ZW1wbGF0ZSBcIkM6XFxVc2Vyc1xcMTI1Mjk1XFxET0NVTUV+MVxcQk9YU1lOfjFcXE9ORURSSX4xXFxET0NVTUV+MVxcUlxcV0lOLUxJfjFcXDQuMVxcbGVhcm5yXFxSTUFSS0R+MVxcVEVNUExBfjFcXHR1dG9yaWFsXFxSRVNPVVJ+MVxcVFVUT1JJfjEuSFRNXCIgLS1uby1oaWdobGlnaHQgLS12YXJpYWJsZSBoaWdobGlnaHRqcz0xIC0tdmFyaWFibGUgcHJvZ3Jlc3NpdmU9ZmFsc2UgLS12YXJpYWJsZSBhbGxvdy1za2lwPWZhbHNlIC0taWQtcHJlZml4IHNlY3Rpb24tIC0tdmFyaWFibGUgdGhlbWU9Y2VydWxlYW4gLS1tYXRoamF4IC0tdmFyaWFibGUgXCJtYXRoamF4LXVybDpodHRwczovL21hdGhqYXgucnN0dWRpby5jb20vbGF0ZXN0L01hdGhKYXguanM/Y29uZmlnPVRlWC1BTVMtTU1MX0hUTUxvck1NTFwiIC0tdmFyaWFibGUgc2hpbnktcHJlcmVuZGVyZWQgXG4ifQ== -->
+<pre><code>&quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS snippet_matchR.knit.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output snippet_matchR.html --lua-filter &quot;C:\Users\125295\DOCUME~1\BOXSYN~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\RMARKD~1\lua\PAGEBR~1.LUA&quot; --lua-filter &quot;C:\Users\125295\DOCUME~1\BOXSYN~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\RMARKD~1\lua\LATEX-~1.LUA&quot; --variable bs3=TRUE --standalone --section-divs --template &quot;C:\Users\125295\DOCUME~1\BOXSYN~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\DEFAUL~1.HTM&quot; --no-highlight --variable highlightjs=1 --section-divs --template &quot;C:\Users\125295\DOCUME~1\BOXSYN~1\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\learnr\RMARKD~1\TEMPLA~1\tutorial\RESOUR~1\TUTORI~1.HTM&quot; --no-highlight --variable highlightjs=1 --variable progressive=false --variable allow-skip=false --id-prefix section- --variable theme=cerulean --mathjax --variable &quot;mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; --variable shiny-prerendered </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5PdXRwdXQgY3JlYXRlZDogc25pcHBldF9tYXRjaFIuaHRtbFxuIn0= -->
+<pre><code>
+Output created: snippet_matchR.html</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNuaXBwZXQgbWF0Y2hSIGVtYmVkZGluZyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMgU25pcHBldCBtYXRjaFIgDQpUaGlzIHBhZ2UganVzdCBlbWJlZHMgdGhlIFNoaW55IGFwcCBob3N0ZWQgYXQgIGh0dHBzOi8vc2pna25pZ2h0LnNoaW55YXBwcy5pby9TbmlwcGV0X21hdGNoUi8NClRoZSBmaWxlcyBmb3IgdGhpcyBhcmUgaW5jbHVkZWQgaW4gdGhlIGdpdGh1YiByZXNwb3NpdG9yeSwgYW5kIHNvIHlvdSBtYXkgcHJlZmVyIHRvIHJ1biBpdCBsb2NhbGx5LiBJZiBkb2luZyBzbywgc2V0IGV2YWwvaW5jbHVkZSBhcyB0cnVlIGluIHRoZSBzZWNvbmQgb2YgdGhlc2UgY29kZSBibG9ja3MuDQpgYGB7ciBlbWJlZH0NCmtuaXRyOjppbmNsdWRlX2FwKCIgaHR0cHM6Ly9zamdrbmlnaHQuc2hpbnlhcHBzLmlvL1NuaXBwZXRfbWF0Y2hSLyIsDQogICAgICAgICAgICAgICAgICBoZWlnaHQgPSAiNjAwcHgiKQ0KDQpgYGANCg0KYGBge3IgZW1iZWRfbG9jYWwsIGV2YWw9RkFMU0UsIGluY2x1ZGU9RkFMU0UsIGVjaG8gPSBGQUxTRX0NCiNzb21ldGhpbmcgaGVyZQ0KIyBzaGlueUFwcERpcigNCiMgICBzeXN0ZW0uZmlsZSgiZXhhbXBsZXMvMDZfdGFic2V0cyIsIHBhY2thZ2U9InNoaW55IiksDQojICAgb3B0aW9ucyA9IGxpc3Qod2lkdGggPSAiMTAwJSIsIGhlaWdodCA9IDcwMCkNCiMgKQ0KYGBg</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNuaXBwZXQgbWF0Y2hSIGVtYmVkZGluZyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMgU25pcHBldCBtYXRjaFIgDQpUaGlzIHBhZ2UganVzdCBlbWJlZHMgdGhlIFNoaW55IGFwcCBob3N0ZWQgYXQgIGh0dHBzOi8vc2pna25pZ2h0LnNoaW55YXBwcy5pby9TbmlwcGV0X21hdGNoUi8NClRoZSBmaWxlcyBmb3IgdGhpcyBhcmUgaW5jbHVkZWQgaW4gdGhlIGdpdGh1YiByZXNwb3NpdG9yeSwgYW5kIHNvIHlvdSBtYXkgcHJlZmVyIHRvIHJ1biBpdCBsb2NhbGx5LiBJZiBkb2luZyBzbywgc2V0IGV2YWwvaW5jbHVkZSBhcyB0cnVlIGluIHRoZSBzZWNvbmQgb2YgdGhlc2UgY29kZSBibG9ja3MuDQpgYGB7ciBlbWJlZH0NCiNUb28gbGFyZ2U/IERvZXNuJ3Qgd29yayBpbiBhbnkgY2FzZQ0KIyBrbml0cjo6aW5jbHVkZV9hcCgiIGh0dHBzOi8vc2pna25pZ2h0LnNoaW55YXBwcy5pby9TbmlwcGV0X21hdGNoUi8iLA0KIyAgICAgICAgICAgICAgICAgICBoZWlnaHQgPSAiNjAwcHgiKQ0KDQpgYGANCg0KYGBge3IgZW1iZWRfbG9jYWwsIGV2YWw9VFJVRSwgaW5jbHVkZT1UUlVFLCBlY2hvID0gRkFMU0V9DQojc29tZXRoaW5nIGhlcmUNCiMgc2hpbnlBcHBEaXIoDQojICAgc3lzdGVtLmZpbGUoImV4YW1wbGVzLzA2X3RhYnNldHMiLCBwYWNrYWdlPSJzaGlueSIpLA0KIyAgIG9wdGlvbnMgPSBsaXN0KHdpZHRoID0gIjEwMCUiLCBoZWlnaHQgPSA3MDApDQojICkNCg0Kcm1hcmtkb3duOjpydW4oIk1hdGVyaWFscy9zbmlwcGV0X21hdGNoUi5SbWQiKQ0KYGBg</div>
 
 
 

@@ -698,7 +698,7 @@ trump_tweets %>%
 wc <- tweet_words %>%
   anti_join(stop_words) %>%
   count(word) %>%
-  slice_max(n, n = 7000)
+  slice_max(n, n = 500)
 
 ggwordcloud2(wc, color = "random-dark", shape = "star")
 ```
@@ -708,7 +708,7 @@ ggwordcloud2(wc, color = "random-dark", shape = "star")
 wc <- tweet_words %>%
   anti_join(stop_words) %>%
   count(word) %>%
-  slice_max(n, n = 2000)
+  slice_max(n, n = 500)
 
 #wordcloud2(wc, color = "black", maxRotation = 0, minRotation = 0, shape = "diamond") #diamond is just a square
 

@@ -1,6 +1,6 @@
 ---
-title: "Simplified Template for DSI AT2"
-subtitle: "Peter Kiel, modified by Simon Knight And Durand Sinclair"
+#title: "Simplified Template for DSI AT2"
+author: "Peter Kiel, modified by Simon Knight And Durand Sinclair"
 date: "22/08/2019"
 output:
     html_document:
@@ -17,7 +17,10 @@ output:
 
 -----
 
+# Simplified (very) Template for DSI AT2
+
 This is the template, or structure for the report. Make sure that you read it closely, several times.
+
 
 **Word length**  
 2800 words (excluding data excerpts and appendices, visualisations, and 
@@ -29,8 +32,8 @@ In this assignment, use footnotes to do citation. Here's how to do it. ^[This is
 **Embedding an image**
 If you want to embed an image, such as this UTS logo which is in the same directory as this .Rmd file, here's some code that shows you how to do it:  
 
-```{r add_picture, echo=FALSE}
-knitr::include_graphics("uts_logo_new.png", dpi = NA)
+```{r add_picture-simp, echo=FALSE}
+knitr::include_graphics("data/templates/uts_logo_new.png", dpi = NA)
 ```
 
 **Structure**  
@@ -43,52 +46,54 @@ Note: The text between the angle brackets, < >, below, is replaced by your text.
 
 -----
 
-# Title, name, student number etc
+## Title, name, student number etc
 
-# Introduction
+## Introduction
 <a paragraph that gives an overview of what you’ve done>
 
-# Description of process, or method
+## Description of process, or method
 <this is where you give details about what you’ve been collecting and how much you data have; why you choose this data to collect; how you managed the quality and frequency of collection issues; what you did to anonymise or de-identify the data, and how you dealt with the storage and sharing of data within the group. Do not include a dump of all your data here. If you wish to include examples of data (and I think you should) then put these in an appendix to the report.  
 *Criterion 1: Justifies a method to obtain data from multiple sources, for gaining insight into a chosen problem, including analysis of data quality issues in the individual and group data.* >
 
-# Analysis
+## Analysis
 <describe how you analysed your data, and how you contrasted your data with the group’s data.   
 *Criterion 2: Justifies the analysis of the obtained data, including quality issues, to draw conclusions in a professional and engaging manner.* You should include your analysis here using R code, or by loading images and tables you've saved from other programs, like this.>
 
-```{r add_picture_inline, echo=FALSE}
-knitr::include_graphics("uts_logo_new.png", dpi = NA)
+```{r add_pic_inline, echo=FALSE}
+knitr::include_graphics("data/templates/uts_logo_new.png", dpi = NA)
 ```
 
-Or like this: `r knitr::include_graphics("uts_logo_new.png", dpi = NA)`
+Or like this: `r knitr::include_graphics("data/templates/uts_logo_new.png", dpi = NA)`
 
-# Findings and conclusions
+## Findings and conclusions
 <what conclusions did you come to as a result of the analysis of your data and of the group’s data.    
 *Criterion 2: Justifies the analysis of the obtained data, including quality issues, to draw conclusions in a professional and engaging manner.*>
 
-# Discussion
+## Discussion
 <discuss aspects of the process that you see as important. For example, what difficulties did you encounter;  how could you avoid problems if you did it again; etc>
 
 Your ‘justification’ and evaluation of your approach is likely to go in this section, but may also be threaded through the preceding sections. This includes *Criterion 3: Identifies, contextualises, and reflects on the ethical, privacy, and legal issues relevant to the collection and analysis of personal data of self and others.* > 
 
-# Reflection
+## Reflection
 <General reflection on what you learnt during this task. What are you unsure about? What would you do differently if you had to do it all again? How do these experiences relate to the wider practice of data science (for example, issues with collecting, cleaning, analysing and deriving meaning from data, and the ethics of this)? 
 *Criteria 4: Connects the individual experience of this QS project to the practice of data science (and the preceding three criteria).*> 
 
-# References
+## References
 <include any cited references, formatted in Harvard style.> 
 
-# Appendices
+## Appendices
 <include samples of your data - enough to give a sense of what your raw data looks like>
 
-# Other
+## Other
 If you are submitting any additional materials, such as short multimedia presentations or visualisations (such as Prezi, or voice-over video/screen capture, etc), they probably can’t be submitted through Canvas so you will need to arrange some other process such as posting on YouTube or elsewhere, or handing in a memory stick. Please ensure that additional material like this is accessible to the markers (test this by accessing it through someone else’s computer) and avoid any restrictive or proprietary software constraints. Remember to check any included web links!
 
 Diagrams, figures, charts and illustrations must be labelled, and explained, and must be referred to from somewhere in the report. If drawn from another source, then the source must be provided. 
 
-# The ODI Canvas
+## The ODI Canvas
 You can download it and include it like this (play around with the settings to make it display sensibly). You can also include it as a html file, etc.
 
 ```{r add_ODI, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../DSI_copy_ODI_Data_Ethics_Canvas.pdf")
+knitr::include_graphics("data/templates/DSI_copy_ODI_Data_Ethics_Canvas.pdf")
+
+knitr::include_url("https://docs.google.com/document/d/14qEn_yoOpInUAvA8ndNGMNuhxgywQJ3ODmCKcxYZPGQ/edit?usp=sharing")
 ```

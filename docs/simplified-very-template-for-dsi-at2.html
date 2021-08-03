@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Simplified (very) Template for DSI AT2 | R Notebook</title>
+  <meta name="description" content="This is some of the materials we’ll use in the class. These materials were published with the package bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Simplified (very) Template for DSI AT2 | R Notebook" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is some of the materials we’ll use in the class. These materials were published with the package bookdown::gitbook." />
+  <meta name="github-repo" content="sjgknight/dsi" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Simplified (very) Template for DSI AT2 | R Notebook" />
+  
+  <meta name="twitter:description" content="This is some of the materials we’ll use in the class. These materials were published with the package bookdown::gitbook." />
+  
+
+<meta name="author" content="Peter Kiel modified by Simon Knight and Durand Sinclair" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="examples-of-analysing-data-in-r.html"/>
+<link rel="next" href="simplified-template-for-dsi-at2.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">36100 Data Science for Innovation materials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#whats-in-here"><i class="fa fa-check"></i><b>1.1</b> What’s in here?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#for-my-reference"><i class="fa fa-check"></i><b>1.2</b> For my reference</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="preamble.html"><a href="preamble.html"><i class="fa fa-check"></i><b>2</b> Preamble</a></li>
+<li class="chapter" data-level="3" data-path="some-introductory-functions.html"><a href="some-introductory-functions.html"><i class="fa fa-check"></i><b>3</b> Some introductory functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="some-introductory-functions.html"><a href="some-introductory-functions.html#first-were-going-to-load-libraries"><i class="fa fa-check"></i><b>3.1</b> First, we’re going to load libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html"><i class="fa fa-check"></i><b>4</b> Examples of analysing data in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#garmin"><i class="fa fa-check"></i><b>4.1</b> Garmin</a></li>
+<li class="chapter" data-level="4.2" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#walking-data-and-covid-impacts"><i class="fa fa-check"></i><b>4.2</b> Walking data (and covid impacts)</a></li>
+<li class="chapter" data-level="4.3" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#your-location"><i class="fa fa-check"></i><b>4.3</b> Your location</a></li>
+<li class="chapter" data-level="4.4" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#text-mining-demo"><i class="fa fa-check"></i><b>4.4</b> Text mining demo</a></li>
+<li class="chapter" data-level="4.5" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#sentiment-on-text"><i class="fa fa-check"></i><b>4.5</b> Sentiment on text</a></li>
+<li class="chapter" data-level="4.6" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#named-entity-recognition"><i class="fa fa-check"></i><b>4.6</b> Named entity recognition</a></li>
+<li class="chapter" data-level="4.7" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#image-processing-images"><i class="fa fa-check"></i><b>4.7</b> Image processing Images</a></li>
+<li class="chapter" data-level="4.8" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#eda-and-descriptive-statistics"><i class="fa fa-check"></i><b>4.8</b> EDA and Descriptive Statistics</a></li>
+<li class="chapter" data-level="4.9" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#other-fun-examples"><i class="fa fa-check"></i><b>4.9</b> Other fun examples</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#search-history"><i class="fa fa-check"></i><b>4.9.1</b> search history</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html"><i class="fa fa-check"></i><b>5</b> Simplified (very) Template for DSI AT2</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#title-name-student-number-etc"><i class="fa fa-check"></i><b>5.1</b> Title, name, student number etc</a></li>
+<li class="chapter" data-level="5.2" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#introduction"><i class="fa fa-check"></i><b>5.2</b> Introduction</a></li>
+<li class="chapter" data-level="5.3" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#description-of-process-or-method"><i class="fa fa-check"></i><b>5.3</b> Description of process, or method</a></li>
+<li class="chapter" data-level="5.4" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#analysis"><i class="fa fa-check"></i><b>5.4</b> Analysis</a></li>
+<li class="chapter" data-level="5.5" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#findings-and-conclusions"><i class="fa fa-check"></i><b>5.5</b> Findings and conclusions</a></li>
+<li class="chapter" data-level="5.6" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#discussion"><i class="fa fa-check"></i><b>5.6</b> Discussion</a></li>
+<li class="chapter" data-level="5.7" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#reflection"><i class="fa fa-check"></i><b>5.7</b> Reflection</a></li>
+<li class="chapter" data-level="5.8" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#references"><i class="fa fa-check"></i><b>5.8</b> References</a></li>
+<li class="chapter" data-level="5.9" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#appendices"><i class="fa fa-check"></i><b>5.9</b> Appendices</a></li>
+<li class="chapter" data-level="5.10" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#other"><i class="fa fa-check"></i><b>5.10</b> Other</a></li>
+<li class="chapter" data-level="5.11" data-path="simplified-very-template-for-dsi-at2.html"><a href="simplified-very-template-for-dsi-at2.html#the-odi-canvas"><i class="fa fa-check"></i><b>5.11</b> The ODI Canvas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html"><i class="fa fa-check"></i><b>6</b> Simplified Template for DSI AT2</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#preface-how-to-use-this-guide"><i class="fa fa-check"></i><b>6.1</b> Preface: How to use this guide</a></li>
+<li class="chapter" data-level="6.2" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#set-up-a-project"><i class="fa fa-check"></i><b>6.2</b> Set up a project</a></li>
+<li class="chapter" data-level="6.3" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#install-packages"><i class="fa fa-check"></i><b>6.3</b> Install packages</a></li>
+<li class="chapter" data-level="6.4" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#calculating-word-length"><i class="fa fa-check"></i><b>6.4</b> Calculating word length</a></li>
+<li class="chapter" data-level="6.5" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#citations"><i class="fa fa-check"></i><b>6.5</b> Citations</a></li>
+<li class="chapter" data-level="6.6" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#formatting-guide"><i class="fa fa-check"></i><b>6.6</b> Formatting guide</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#fonts"><i class="fa fa-check"></i><b>6.6.1</b> Fonts</a></li>
+<li class="chapter" data-level="6.6.2" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#headings"><i class="fa fa-check"></i><b>6.6.2</b> Headings</a></li>
+<li class="chapter" data-level="6.6.3" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#lists"><i class="fa fa-check"></i><b>6.6.3</b> Lists</a></li>
+<li class="chapter" data-level="6.6.4" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#equations"><i class="fa fa-check"></i><b>6.6.4</b> Equations</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#embedding-an-image"><i class="fa fa-check"></i><b>6.7</b> Embedding an image</a></li>
+<li class="chapter" data-level="6.8" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#introduction-1"><i class="fa fa-check"></i><b>6.8</b> Introduction</a></li>
+<li class="chapter" data-level="6.9" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#description-of-process-or-methods"><i class="fa fa-check"></i><b>6.9</b> Description of process or methods</a></li>
+<li class="chapter" data-level="6.10" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#analysis-1"><i class="fa fa-check"></i><b>6.10</b> Analysis</a>
+<ul>
+<li class="chapter" data-level="6.10.1" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#example-analysis-get-data"><i class="fa fa-check"></i><b>6.10.1</b> Example analysis: Get data</a></li>
+<li class="chapter" data-level="6.10.2" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#example-analysis-explore-data"><i class="fa fa-check"></i><b>6.10.2</b> Example analysis: Explore data</a></li>
+<li class="chapter" data-level="6.10.3" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#example-analysis-explore-data-via-statistical-summaries"><i class="fa fa-check"></i><b>6.10.3</b> Example Analysis: Explore data via statistical summaries</a></li>
+<li class="chapter" data-level="6.10.4" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#example-analysis-tidy-data"><i class="fa fa-check"></i><b>6.10.4</b> Example analysis: Tidy data</a></li>
+<li class="chapter" data-level="6.10.5" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#example-analysis-create-charts-for-presentation"><i class="fa fa-check"></i><b>6.10.5</b> Example analysis: Create charts for presentation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#findings-and-conclusion"><i class="fa fa-check"></i><b>6.11</b> Findings and conclusion</a></li>
+<li class="chapter" data-level="6.12" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#discussion-1"><i class="fa fa-check"></i><b>6.12</b> Discussion</a></li>
+<li class="chapter" data-level="6.13" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#reflection-1"><i class="fa fa-check"></i><b>6.13</b> Reflection</a></li>
+<li class="chapter" data-level="6.14" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#references-1"><i class="fa fa-check"></i><b>6.14</b> References</a></li>
+<li class="chapter" data-level="6.15" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#appendices-1"><i class="fa fa-check"></i><b>6.15</b> Appendices</a></li>
+<li class="chapter" data-level="6.16" data-path="simplified-template-for-dsi-at2.html"><a href="simplified-template-for-dsi-at2.html#other-1"><i class="fa fa-check"></i><b>6.16</b> Other</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Notebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simplified-very-template-for-dsi-at2" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Simplified (very) Template for DSI AT2</h1>
+<p>This is the template, or structure for the report. Make sure that you read it closely, several times.</p>
+<p><strong>Word length</strong><br />
+2800 words (excluding data excerpts and appendices, visualisations, and
+references).</p>
+<p><strong>Citations</strong>
+In this assignment, use footnotes to do citation. Here’s how to do it.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p><strong>Embedding an image</strong>
+If you want to embed an image, such as this UTS logo which is in the same directory as this .Rmd file, here’s some code that shows you how to do it:</p>
+<p><img src="data/templates/uts_logo_new.png" /><!-- --></p>
+<p><strong>Structure</strong><br />
+This is the suggested structure for your report. The basic structure is similar to the style of academic papers and, if followed, should ensure that everything you need to include is present. I have included the assessment criteria at the relevant places to remind you of what needs to be in the report.</p>
+<p>You are free to vary the structure by renaming the sections, including other sections, or dropping ones that you don’t use. Keep in mind that the suggested structure is conventional (and therefore easy to follow), practical, and comprehensive. <em>(Criterion 5: Professionally presented in a manner appropriate to the discipline.)</em></p>
+<p>Note: The text between the angle brackets, &lt; &gt;, below, is replaced by your text.</p>
+<hr />
+<div id="title-name-student-number-etc" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Title, name, student number etc</h2>
+</div>
+<div id="introduction" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Introduction</h2>
+<p>&lt;a paragraph that gives an overview of what you’ve done&gt;</p>
+</div>
+<div id="description-of-process-or-method" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Description of process, or method</h2>
+<p>&lt;this is where you give details about what you’ve been collecting and how much you data have; why you choose this data to collect; how you managed the quality and frequency of collection issues; what you did to anonymise or de-identify the data, and how you dealt with the storage and sharing of data within the group. Do not include a dump of all your data here. If you wish to include examples of data (and I think you should) then put these in an appendix to the report.<br />
+<em>Criterion 1: Justifies a method to obtain data from multiple sources, for gaining insight into a chosen problem, including analysis of data quality issues in the individual and group data.</em> &gt;</p>
+</div>
+<div id="analysis" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Analysis</h2>
+<p>&lt;describe how you analysed your data, and how you contrasted your data with the group’s data.<br />
+<em>Criterion 2: Justifies the analysis of the obtained data, including quality issues, to draw conclusions in a professional and engaging manner.</em> You should include your analysis here using R code, or by loading images and tables you’ve saved from other programs, like this.&gt;</p>
+<p><img src="data/templates/uts_logo_new.png" /><!-- --></p>
+<p>Or like this: <img src="data/templates/uts_logo_new.png" /><!-- --></p>
+</div>
+<div id="findings-and-conclusions" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Findings and conclusions</h2>
+<p>&lt;what conclusions did you come to as a result of the analysis of your data and of the group’s data.<br />
+<em>Criterion 2: Justifies the analysis of the obtained data, including quality issues, to draw conclusions in a professional and engaging manner.</em>&gt;</p>
+</div>
+<div id="discussion" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Discussion</h2>
+<p>&lt;discuss aspects of the process that you see as important. For example, what difficulties did you encounter; how could you avoid problems if you did it again; etc&gt;</p>
+<p>Your ‘justification’ and evaluation of your approach is likely to go in this section, but may also be threaded through the preceding sections. This includes <em>Criterion 3: Identifies, contextualises, and reflects on the ethical, privacy, and legal issues relevant to the collection and analysis of personal data of self and others.</em> &gt;</p>
+</div>
+<div id="reflection" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Reflection</h2>
+<p>&lt;General reflection on what you learnt during this task. What are you unsure about? What would you do differently if you had to do it all again? How do these experiences relate to the wider practice of data science (for example, issues with collecting, cleaning, analysing and deriving meaning from data, and the ethics of this)?
+<em>Criteria 4: Connects the individual experience of this QS project to the practice of data science (and the preceding three criteria).</em>&gt;</p>
+</div>
+<div id="references" class="section level2" number="5.8">
+<h2><span class="header-section-number">5.8</span> References</h2>
+<p>&lt;include any cited references, formatted in Harvard style.&gt;</p>
+</div>
+<div id="appendices" class="section level2" number="5.9">
+<h2><span class="header-section-number">5.9</span> Appendices</h2>
+<p>&lt;include samples of your data - enough to give a sense of what your raw data looks like&gt;</p>
+</div>
+<div id="other" class="section level2" number="5.10">
+<h2><span class="header-section-number">5.10</span> Other</h2>
+<p>If you are submitting any additional materials, such as short multimedia presentations or visualisations (such as Prezi, or voice-over video/screen capture, etc), they probably can’t be submitted through Canvas so you will need to arrange some other process such as posting on YouTube or elsewhere, or handing in a memory stick. Please ensure that additional material like this is accessible to the markers (test this by accessing it through someone else’s computer) and avoid any restrictive or proprietary software constraints. Remember to check any included web links!</p>
+<p>Diagrams, figures, charts and illustrations must be labelled, and explained, and must be referred to from somewhere in the report. If drawn from another source, then the source must be provided.</p>
+</div>
+<div id="the-odi-canvas" class="section level2" number="5.11">
+<h2><span class="header-section-number">5.11</span> The ODI Canvas</h2>
+<p>You can download it and include it like this (play around with the settings to make it display sensibly). You can also include it as a html file, etc.</p>
+<embed src="data/templates/DSI_copy_ODI_Data_Ethics_Canvas.pdf" width="100%" type="application/pdf" />
+<iframe src="https://docs.google.com/document/d/14qEn_yoOpInUAvA8ndNGMNuhxgywQJ3ODmCKcxYZPGQ/edit?usp=sharing" width="100%" height="400px">
+</iframe>
+
+<hr />
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>This is the text of the footnote which you can see at the bottom of the page.<a href="simplified-very-template-for-dsi-at2.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="examples-of-analysing-data-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simplified-template-for-dsi-at2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Materials/Templates/AT2_very_simplified/template_very_simplified.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["36100 Data Science for Innovation.pdf", "36100 Data Science for Innovation.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

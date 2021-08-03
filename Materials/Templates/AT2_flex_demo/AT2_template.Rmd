@@ -14,12 +14,14 @@ output:
       bootswatch: flatly 
 ---
 
+# Flexdashboard Template for DSI AT2
+
 I'm not sure a flexdashboard is a great way to present this kind of work, because it's a lot of text, while dashboards are really built for bits of commentary but mostly visual information.
 This example is a mess because I was playing around with different aspects of layout, so it needs fixing up.
 I would suggest bookdown as a more functional approach. 
 
 
-```{r setup, include=FALSE, message=FALSE}
+```{r setup-flex, include=FALSE, message=FALSE}
 library(flexdashboard)
 library(tidyverse)
 library(psych)
@@ -154,7 +156,7 @@ Analysis {.tabset}
 
 ### Get and load data
 
-```{r getting data, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r getting_data_flex, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 #We're just going to demo this with one of the built in datasets
 df <- data(iris)
 
@@ -164,27 +166,26 @@ knitr::kable(iris)
 
 ### Tables
 
-```{r summarise the data, anchor="Table", echo=T}
-
+```{r summarise_data, tab.cap="A summary table", echo=T}
 #knitr::kable(summary(iris))
 knitr::kable(describe(iris))
 
 ```
 
-You'll see above that I used a labelled for the table, I did that by adding `anchor="table"` to the start of the chunk (along with the name `summarise the data`). Now, I can use `figr("summarise the data", "Table")` to refer to it like this `r figr("summarise the data")`. I haven't worked out if you can get it to output the whole caption (e.g. Table 1: Caption name here).  
+You'll see above that I used a labelled for the table, I did that by adding `\@ref(tab:summarise_data)`. Now, I can use this to refer to it like this \\@ref(tab:summarise_data). 
 
 ### Plots
 
 An example (a pretty ugly one) of a plot is in the code, and visible below (once I get the captioning working again)...Let's see how this can be improved.
 
-```{r basic histograms, echo=TRUE}
+```{r basic_histograms, echo=TRUE}
 hist(iris$Sepal.Length)
 
 ```
 
-The ggplot package makes much nicer figures, like that shown in `r figr("pretty histograms", type = "Figure")`. 
+The ggplot package makes much nicer figures, like that shown in `r figr("pretty_histograms", type = "Figure")`. 
 
-```{r pretty histograms, echo=TRUE, anchor = "Figure", fig.cap="pretty histograms", fig.width=4, fig.height=4}
+```{r pretty_histograms, echo=TRUE, anchor = "Figure", fig.cap="pretty histograms", fig.width=4, fig.height=4}
 ggplot(iris, aes(x = Sepal.Length, fill = Species)) + geom_histogram(alpha = .5, position = 'identity') 
 
 ```
@@ -214,7 +215,7 @@ If you are submitting any additional materials, such as short multimedia present
 
 Diagrams, figures, charts and illustrations must be labelled, and explained, and must be referred to from somewhere in the report. If drawn from another source, then the source must be provided. 
 
-References
+## References
 ------------------------------------------
 
-Your referenec list should go here
+Your reference list should go here

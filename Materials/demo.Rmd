@@ -1,10 +1,14 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
-# Preamble and some demonstration functions
+# Preamble
+The aim of this file is to show you some basic functionality of an Rmd, and some of the kinds of analysis you might do.  It's not intended to be exhaustive, it's just to stimulate ideas.  
 
+# Some introductory functions
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
@@ -61,6 +65,10 @@ library(trackeRapp)
 #library(maptools)
 #library(revgeo)
 
+#So I can embed webpages
+#install.packages("webshot")
+#webshot::install_phantomjs()
+library(webshot)
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
@@ -69,8 +77,29 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
+# Examples of analysing data in R
+
+These are some example vignettes - worked examples - of how to run a set of analyses in R.  You might find some of them useful.  You can also explore the examples https://quantifiedself.com/show-and-tell/ and various other sources!
+
+Remember, there is no expectation that you code in DSI 36100.  There are many many freely available tools that will help you run the kind of basic exploratory statistical analyses you need for AT2 (e.g. spreadsheet tools), and visualise data.
+
+There are also free tools that will analyse text and images (although possibly not in batch, unless you use an app to collect the images), again without coding. The key thing for this assignment is thinking creatively about how to analyse and make sense of the data and the justification for that, not demonstrating advanced coding skills.
+
+Most of the examples below are from MDSI students (a couple from me, and a few externals).
+You might also find these two posts useful:
+
+* An Introduction to Accessing RESTful APIs Using R, by Werner Schott, March 31, 2019: In the past, working in R has meant importing data into the application from numerous sources. I have found this very manual and not very reproducible in the development of applications. One of the weaknesses I have identified and would like to address is to understand how to access online data resources using the appropriate packages in R. The scope of this exercise is not to master the use of one package or several packages, but rather understand how certain R packages fit into the overall process, and what that process is. http://rpubs.com/plantagenet/481658  
+* Use R-Studio on any PC (with portable apps), Joshua McCarthy, 29 March 2019, Someone out there has kindly adapted R to the Portable Apps framework! This means we can use R and R-Studio anywhere we like without needing to install R and R-Studio locally, quite handy for work, University computers and VM’s. We can also keep all our libraries and packages in one location making them easier to manage when moving between workstations. http://rpubs.com/jsmccid/rportable 
+* https://github.com/thomasp85/gganimate  - this is very cool, create animated gif visualisations http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html - nice examples of a bunch of ggplot charts
+* Create sonified data (using audio to represent the shape of data, as we use visualisation) http://playitbyr.org/ 
+* https://cran.r-project.org/web/packages/googleway/vignettes/googleway-vignette.html - connect to a variety of google map based services
+* Corplot is nice, but you probably dont need it for DSI http://rpubs.com/dev_chilwal/481439  
+* Want to visualise your web history?  Here’s one way to do that https://www.webhistorian.org/education/ 
+* Some time ago I saw a blog post on visualising your twitter history using streamgraphs in R. As my tweets moved from mostly psychology/philosophy tweeting around my teaching, through to my current mish-mash of learning analytics stuff, I thought it’d be interesting to play with this. So, here’s the code reproduced, plus my streamgraph. http://sjgknight.com/finding-knowledge/2016/01/visualising-twitter-history/ 
+
+
 ## Garmin
-```{r garmin}
+```{r garmin, out.width = "100%"}
 #uses the library trackeR. See vignette at https://cran.r-project.org/web/packages/trackeR/vignettes/TourDetrackeR.html - read for detail
 #First we're going to load some dummy data. 
 
@@ -83,33 +112,54 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 ##################################################
 ##################################################
 
-runDF <- data(runs)
-plot(runs, session = 1:7)
+knitr::include_url("http://cran.r-project.org/web/packages/trackeR/vignettes/TourDetrackeR.html")
 
 
-summary(runs, session = 1, moving_threshold = c(cycling = 2, running = 1, swimming = 0.5))
+```
 
-# run_sum <- lapply(runs, function(x){
-#   summary(x, session = 1, moving_threshold = c(cycling = 2, running = 1, swimming = 0.5))
-# })
+## Walking data (and covid impacts)
+```{r walking}
+knitr::include_url("https://methodmatters.github.io/impact-covid-19-pandemic-2020-steps/")
+```
+
+## Your location
+```{r}
+knitr::include_url("https://rpubs.com/Geoff_W/481405")
 ```
 
 ## Text mining demo
-Show some functions for named entity recognition, sentiment analysis, and other text stuff.
+Show some functions basic text stuff.
 ```{r text mining}
-#using https://rafalab.github.io/dsbook/text-mining.html
-#and https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html 
+knitr::include_url("https://rafalab.github.io/dsbook/text-mining.html")
 
-tweets <- data("trump_tweets") #from the dslabs library
-
-
+knitr::include_url("https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html")
 
 ```
 
-## Image processing Images
-Show some functions for dealing with image data, including image recognition
-```{r images}
+## Sentiment on text
+This is a nicer sentiment analysis package
+```{r sentiment}
+knitr::include_url("https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html")
 
+```
+
+## Named entity recognition
+Can we identify things (people, places, etc.) in text?
+```{r NER}
+#I dn't have storng views on whether this package is the best (the vignette could be expanded a bit...), but it is a tidy approach to NLP and has a nice entity extraction (see entity_type  and entity)
+knitr::include_url("https://statsmaths.github.io/cleanNLP/state-of-union.html")
+
+#another simple option is entity
+knitr::include_url("https://github.com/trinker/entity/blob/master/README.md")
+
+#https://towardsdatascience.com/quick-guide-to-entity-recognition-and-geocoding-with-r-c0a915932895
+#Notice they also geocode their data using https://cran.r-project.org/web/packages/tidygeocoder/vignettes/tidygeocoder.html 
+```
+
+## Image processing Images
+Here's a silly example of some functions for dealing with image data, including image recognition
+```{r images}
+knitr::include_url("https://rpubs.com/sjgknight/food")
 ```
 
 ## EDA and Descriptive Statistics
@@ -119,7 +169,9 @@ Show some...
 ```
 
 ## Other fun examples
-Browser history data, google takeout, facebook data, maps, whatever else.
-```{r examples}
-
+### search history
+```{r search}
+knitr::include_url("https://rstudio-pubs-static.s3.amazonaws.com/359000_436aec1332894fe8b4651e1aab587d12.html")
 ```
+
+...your example here!
