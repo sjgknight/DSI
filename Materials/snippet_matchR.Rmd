@@ -266,6 +266,10 @@ grade_code()
 #block 8 - correct
 #block 7 and 17
 ## #Is date an important variable in this analysis? Does the scaling of the data gives us the best available insight into relationships of paired values? 
+#you might also look at those 4 v high values
+# trump_tweets %>% 
+#   slice_max(retweet_count, n = 4) %>%
+#   select(text,created_at,retweet_count,favorite_count,source) #uses dplyr slice function, and selects the columns we're interested in
 ```
 
 
