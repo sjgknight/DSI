@@ -8,4 +8,6 @@ The structure of the this project is as follows:
 * Materials - contains various bits of subject content
 ** Number of .Rmd files, included in _bookdown.yml
 ** Data directory, which contains sample data 
-** Templates, which contains sample templates for AT2, also included in bookdown
+** Some vignettes for convenience (there should be a way to include these without saving them, but I can't see how quickly enough)
+* I have moved Templates to a separate repository
+* I will be adding learnr activities 

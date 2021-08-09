@@ -26,6 +26,7 @@ The **bookdown** package can be installed from CRAN or Github:
 # devtools::install_github("rstudio/bookdown")
 library(bookdown)
 options(bookdown.render.file_scope = FALSE)
+
 ```
 
 Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
@@ -45,6 +46,8 @@ And code for the book can be found <https://github.com/sjgknight/dsi>
 ```
 
 ```{r include=FALSE}
+
+#knitr::opts_chunk$set(cache = TRUE)
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'

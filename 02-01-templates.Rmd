@@ -1,0 +1,13 @@
+---
+output:
+  html_document:
+    df_print: paged
+---
+
+# Simplified (very) template
+
+```{r verysimplified}
+
+htmltools::includeHTML("https://raw.githubusercontent.com/sjgknight/DSI-templates/main/AT2_very_simplified/template_very_simplified.html")
+
+```

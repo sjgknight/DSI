@@ -92,12 +92,12 @@ You might also find these few posts useful:
 Remember, not all of these approaches are _good_ or _sensible_ approaches, consider how you use standard features like tables and reporting numbers, and don't go overboard with complex visualisations. 
 
 ```{r ggan_example, out.width = "100%"}
-if(!file.exists("vignettes/gganimate")){
+if(!file.exists("vignettes/gganimate.html")){
   file.copy(RShowDoc("gganimate", package = "gganimate"), "vignettes/", overwrite = FALSE)
 #file.copy(vignette("gganimate"), "vignettes/", overwrite = FALSE)
 }
 
-knitr::include_url("vignettes/gganimate"))
+knitr::include_url("vignettes/gganimate.html")
 
 ```
 
@@ -117,7 +117,7 @@ knitr::include_url("vignettes/gganimate"))
 #knitr::include_url("http://cran.r-project.org/web/packages/trackeR/vignettes/TourDetrackeR.html")
 #Because I actually have this file locally as part of the package I'm going to save a copy into a new directory, and then display that version 
 
-if(!file.exists("vignettes/gganimate")){
+if(!file.exists("vignettes/TourDetrackeR")){
   file.copy(RShowDoc("TourDetrackeR", package = "trackeR"), "vignettes/", overwrite = FALSE) 
 }
 
@@ -147,7 +147,7 @@ Show some functions basic text stuff.
 ```{r text mining}
 knitr::include_url("https://rafalab.github.io/dsbook/text-mining.html")
 
-if(!file.exists("vignettes/gganimate")){
+if(!file.exists("vignettes/tidytext")){
   file.copy(RShowDoc("tidytext", package = "tidytext"), "vignettes/", overwrite = FALSE)
 }
 

@@ -212,7 +212,7 @@ trump_tweets %>%
   filter(source %in% c("Twitter for Android","Twitter for iPhone","TweetDeck","Twitter Web Client")) %>% 
   select(c(favorite_count,retweet_count,source)) %>%
   psych::describeBy(favorite_count + retweet_count ~ source, data = ., mat = T) %>%
-  kable()
+  kable(.,"html")
 
 ```
 ## Some demonstration
@@ -334,7 +334,7 @@ trump_tweets %>%
   stat_summary(
     fun.y = mean, geom="point", shape=5, size=4)
 
-kable(trump_tweets$source)
+kable(table(trump_tweets$source), output = "html")
 
 ggplot(trump_tweets %>% filter(source %in% c("Twitter for Android","Twitter for iPhone","TweetDeck","Twitter Web Client")), 
        aes(x = word_count, fill = source)) + 
@@ -423,7 +423,7 @@ trump_tweets %>%
   filter(source %in% c("Twitter for Android","Twitter for iPhone","TweetDeck","Twitter Web Client")) %>% 
   select(c(favorite_count,retweet_count,sentiment_nrc)) %>%
   psych::describeBy(favorite_count + retweet_count ~ sentiment_nrc, data = ., mat = T) %>%
-  kable(digits=2)
+  kable(digits=2, "html")
 ```
 
 
@@ -490,7 +490,7 @@ trump_tweets %>%
     fun.y = mean, geom="point", shape=5, size=4) +
   geom_jitter()
 
-kable(trump_tweets$source)
+kable(table(trump_tweets$source), output = "html")
 
 ggplot(trump_tweets %>% 
          filter(source %in% c("Twitter for Android","Twitter for iPhone","TweetDeck","Twitter Web Client")), 
@@ -557,7 +557,7 @@ trump_tweets %>%
   stat_summary(
     fun.y = mean, geom="point", shape=5, size=4)
 
-kable(trump_tweets$source)
+kable(table(trump_tweets$source), output = "html")
 
 ggplot(trump_tweets %>% filter(source %in% c("Twitter for Android","Twitter for iPhone","TweetDeck","Twitter Web Client")), 
        aes(x = word_count, fill = source)) + 

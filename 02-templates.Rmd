@@ -1,7 +1,4 @@
 ---
-title: "02-template-intro"
-author: "sjgknight"
-date: "09/08/2021"
 output:
   html_document:
     df_print: paged
@@ -15,12 +12,12 @@ RStudio has made this a lot simpler recently because there is now an inbuilt vis
 
 We've created some templates to help with this, and they are organised by complexity in the next Chapters.
 
-You can download each of these as Project files.
+You can download each of these as Project files, either at the guthub repository <https://github.com/sjgknight/DSI-templates> or via drive <https://tinyurl.com/DSIAT2Template> (they should be in sync).
 
-1.  
+You can see what they look like in the next chapters.
 
-```{r}
+1.  Simplified (very) Template is an introductory one
 
+2.  Simplified Template (suggest using this one if you're happy to play around a bit more, but it's still pretty easy to learn)
 
-
-```
+3.  FlexDashboard (note - more advanced, and this isn't a proper functioning example) (more advanced...so much so, I couldn't get a functional example working well, so you'd have to be ok fixing it up. You can also embed these in other documents, like this).

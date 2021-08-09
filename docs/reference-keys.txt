@@ -1,4 +1,3 @@
-tab:Summaryweather
 prerequisites
 whats-in-here
 to-download-and-use-the-code
@@ -17,6 +16,8 @@ image-processing-images
 eda-and-descriptive-statistics
 other-fun-examples
 search-history
+introduction-to-the-at2-templates
+simplified-very-template
 simplified-very-template-for-dsi-at2
 title-name-student-number-etc
 introduction
@@ -29,6 +30,7 @@ references
 appendices
 other
 the-odi-canvas
+simplified-template
 simplified-template-for-dsi-at2
 preface-how-to-use-this-guide
 set-up-a-project
@@ -41,18 +43,11 @@ headings
 lists
 equations
 embedding-an-image
-introduction-1
 description-of-process-or-methods
-analysis-1
 example-analysis-get-data
 example-analysis-explore-data
 example-analysis-explore-data-via-statistical-summaries
 example-analysis-tidy-data
 example-analysis-create-charts-for-presentation
 findings-and-conclusion
-discussion-1
-reflection-1
-references-1
-appendices-1
-other-1
-references-2
+flexdashboard-note---more-advanced-and-this-isnt-a-proper-functioning-example
