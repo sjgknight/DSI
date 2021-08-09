@@ -9,31 +9,24 @@ output:
 The aim of this file is to show you some basic functionality of an Rmd, and some of the kinds of analysis you might do.  It's not intended to be exhaustive, it's just to stimulate ideas.  
 
 # Some introductory functions
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+This is an export of an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you access the raw notebook, you can execute code within the notebook on your computer and the results appear beneath the code. 
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+If you have downloaded the code, you can try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 
 ```{r gitsetup, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
-#This block won't be visible on the Rmd (it suppresses messages and warnings, and neither the code nor the output are visible.)
-#To run it, change eval=FALSE to TRUE
-#this doesn't really need to be here, but you should run gitignore
-library(gitignore)
-gi_fetch_templates("R", append_gitignore = TRUE) #you can use this function to get common gitignore templates, particularly useful if you're using other languages. By default when r creates a git repo some of these are in it anyway.
-#To this you might want to add other things like api keys, maybe data, etc.
-#There are a range of ways to do this, for the purpose of this demo it's useful for me to create a script in a private folder that is ignored, and which creates the api keys in my environment.  
+####This block won't be visible on the Rmd (it suppresses messages and warnings, and neither the code nor the output are visible.). To run it, change eval=FALSE to TRUE.  This doesn't really need to be here, but you should run gitignore when you setup new projects.
 
-#To demonstrate this, we'll add that folder to the gitignore
-write_lines("/private/",".gitignore",sep = "\n", append = TRUE)
+#library(gitignore)
+#gi_fetch_templates("R", append_gitignore = TRUE) #you can use this function to get common gitignore templates, particularly useful if you're using other languages. By default when r creates a git repo some of these are in it anyway.
 
-#we'll create it
-dir.create("private")
+####To this you might want to add other things like api keys, maybe data, etc.  There are a range of ways to do this, for the purpose of this demo it's useful for me to create a script in a private folder that is ignored, and which creates the api keys in my environment.  To demonstrate this, we'll (1) add that folder to the gitignore, (2) create it, (3) add a file to it, you'll need to change this one (or open up the file and edit it) to add your own keys.  You can then (4) easily use 'source' to include that file to run it
 
-#and then we'll add a file to it, you'll need to change this one (or open the file up and edit it) to add your own keys
-file.create("private/keys.R")
-write_lines(c("",""),"private/keys.R",sep = "\n", append = TRUE)
+#write_lines("/private/",".gitignore",sep = "\n", append = TRUE)  #step 1
+#dir.create("private") #step 2
+#file.create("private/keys.R") #step 3a
+#write_lines(c("",""),"private/keys.R",sep = "\n", append = TRUE) #step 3b
 
-#Then you can easily run that file like this
-source("private/keys.R")
+#source("private/keys.R") #step 4
 ```
 
 ## First, we're going to load libraries
@@ -45,7 +38,6 @@ library(readxl)
 library(jsonlite)
 library(lubridate)
 library(httr)
-
 #these are also useful (in part to demonstrate features)
 library(psych)
 library(doBy)
@@ -53,22 +45,20 @@ library(reshape2)
 library(lattice)
 library(scales)
 library(tidytext)
-
 #SimComp lets me create some random datasets with defined properties
 library(SimComp)  
-
 #The ones below are specifically for this data
 library(dslabs)
 library(trackeR)
 library(trackeRapp)
-
 #library(maptools)
 #library(revgeo)
-
 #So I can embed webpages
 #install.packages("webshot")
 #webshot::install_phantomjs()
 library(webshot)
+library(htmlwidgets)
+library(widgetframe)
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
@@ -86,7 +76,9 @@ Remember, there is no expectation that you code in DSI 36100.  There are many ma
 There are also free tools that will analyse text and images (although possibly not in batch, unless you use an app to collect the images), again without coding. The key thing for this assignment is thinking creatively about how to analyse and make sense of the data and the justification for that, not demonstrating advanced coding skills.
 
 Most of the examples below are from MDSI students (a couple from me, and a few externals).
-You might also find these two posts useful:
+
+## Useful other tools or snippets of code
+You might also find these few posts useful:
 
 * An Introduction to Accessing RESTful APIs Using R, by Werner Schott, March 31, 2019: In the past, working in R has meant importing data into the application from numerous sources. I have found this very manual and not very reproducible in the development of applications. One of the weaknesses I have identified and would like to address is to understand how to access online data resources using the appropriate packages in R. The scope of this exercise is not to master the use of one package or several packages, but rather understand how certain R packages fit into the overall process, and what that process is. http://rpubs.com/plantagenet/481658  
 * Use R-Studio on any PC (with portable apps), Joshua McCarthy, 29 March 2019, Someone out there has kindly adapted R to the Portable Apps framework! This means we can use R and R-Studio anywhere we like without needing to install R and R-Studio locally, quite handy for work, University computers and VM’s. We can also keep all our libraries and packages in one location making them easier to manage when moving between workstations. http://rpubs.com/jsmccid/rportable 
@@ -97,23 +89,39 @@ You might also find these two posts useful:
 * Want to visualise your web history?  Here’s one way to do that https://www.webhistorian.org/education/ 
 * Some time ago I saw a blog post on visualising your twitter history using streamgraphs in R. As my tweets moved from mostly psychology/philosophy tweeting around my teaching, through to my current mish-mash of learning analytics stuff, I thought it’d be interesting to play with this. So, here’s the code reproduced, plus my streamgraph. http://sjgknight.com/finding-knowledge/2016/01/visualising-twitter-history/ 
 
+Remember, not all of these approaches are _good_ or _sensible_ approaches, consider how you use standard features like tables and reporting numbers, and don't go overboard with complex visualisations. 
+
+```{r ggan_example, out.width = "100%"}
+if(!file.exists("vignettes/gganimate")){
+  file.copy(RShowDoc("gganimate", package = "gganimate"), "vignettes/", overwrite = FALSE)
+#file.copy(vignette("gganimate"), "vignettes/", overwrite = FALSE)
+}
+
+knitr::include_url("vignettes/gganimate"))
+
+```
+
+
 
 ## Garmin
 ```{r garmin, out.width = "100%"}
 #uses the library trackeR. See vignette at https://cran.r-project.org/web/packages/trackeR/vignettes/TourDetrackeR.html - read for detail
 #First we're going to load some dummy data. 
-
 #to do this with your own data, you'll need to use the function read_container
 #TO DO THAT YOU SHOULD UNCOMMENT THE FOLLOWING TWO LINES
 #BUT FOR THE PURPOSES OF THIS DEMO I'M JUST GOING TO IMPORT THE PACKAGE DATA
 #filepath <- "private/your_Garmin_export.TCX.gz"
 #runDF <- read_container(filepath, type = "tcx", timezone = "GMT") #check other options
-
 ##################################################
 ##################################################
+#knitr::include_url("http://cran.r-project.org/web/packages/trackeR/vignettes/TourDetrackeR.html")
+#Because I actually have this file locally as part of the package I'm going to save a copy into a new directory, and then display that version 
 
-knitr::include_url("http://cran.r-project.org/web/packages/trackeR/vignettes/TourDetrackeR.html")
+if(!file.exists("vignettes/gganimate")){
+  file.copy(RShowDoc("TourDetrackeR", package = "trackeR"), "vignettes/", overwrite = FALSE) 
+}
 
+knitr::include_url("vignettes/TourDetrackeR.html")
 
 ```
 
@@ -123,8 +131,15 @@ knitr::include_url("https://methodmatters.github.io/impact-covid-19-pandemic-202
 ```
 
 ## Your location
-```{r}
-knitr::include_url("https://rpubs.com/Geoff_W/481405")
+```{r location}
+#This one is from this markdown https://rpubs.com/Geoff_W/481405 by Geoff, an alumnus of the MDSI
+
+if(!file.exists("vignettes/location.html")){
+  download.file("https://rstudio-pubs-static.s3.amazonaws.com/481405_ff86c5e272d84cc6a47c3d4b3c0fb0c3.html", "vignettes/location.html")
+}
+
+knitr::include_url("vignettes/location.html")
+
 ```
 
 ## Text mining demo
@@ -132,14 +147,27 @@ Show some functions basic text stuff.
 ```{r text mining}
 knitr::include_url("https://rafalab.github.io/dsbook/text-mining.html")
 
-knitr::include_url("https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html")
+if(!file.exists("vignettes/gganimate")){
+  file.copy(RShowDoc("tidytext", package = "tidytext"), "vignettes/", overwrite = FALSE)
+}
+
+knitr::include_url("vignettes/tidytext.html")
+
+#knitr::include_url("https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html")
 
 ```
 
 ## Sentiment on text
 This is a nicer sentiment analysis package
 ```{r sentiment}
-knitr::include_url("https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html")
+#knitr::include_url("https://github.com/trinker/sentimentr/blob/master/README.md")
+
+
+if(!file.exists("vignettes/sentimentr.html")){
+  download.file("https://github.com/trinker/sentimentr/blob/master/README.md", "vignettes/sentimentr.html")
+}
+
+knitr::include_url("vignettes/sentimentr.html")
 
 ```
 
@@ -150,7 +178,13 @@ Can we identify things (people, places, etc.) in text?
 knitr::include_url("https://statsmaths.github.io/cleanNLP/state-of-union.html")
 
 #another simple option is entity
-knitr::include_url("https://github.com/trinker/entity/blob/master/README.md")
+#knitr::include_url("https://github.com/trinker/entity/blob/master/README.md")
+
+if(!file.exists("vignettes/NER.html")){
+  download.file("https://github.com/trinker/entity/blob/master/README.md", "vignettes/NER.html")
+}
+
+knitr::include_url("vignettes/NER.html")
 
 #https://towardsdatascience.com/quick-guide-to-entity-recognition-and-geocoding-with-r-c0a915932895
 #Notice they also geocode their data using https://cran.r-project.org/web/packages/tidygeocoder/vignettes/tidygeocoder.html 
@@ -159,19 +193,26 @@ knitr::include_url("https://github.com/trinker/entity/blob/master/README.md")
 ## Image processing Images
 Here's a silly example of some functions for dealing with image data, including image recognition
 ```{r images}
-knitr::include_url("https://rpubs.com/sjgknight/food")
+#knitr::include_url("https://rpubs.com/sjgknight/food")
+
+knitr::include_url("vignettes/clarifai.html")
+
 ```
 
 ## EDA and Descriptive Statistics
 Show some...
 ```{r EDA}
-
 ```
 
 ## Other fun examples
 ### search history
 ```{r search}
-knitr::include_url("https://rstudio-pubs-static.s3.amazonaws.com/359000_436aec1332894fe8b4651e1aab587d12.html")
+
+if(!file.exists("vignettes/search.html")){
+  download.file("https://rstudio-pubs-static.s3.amazonaws.com/359000_436aec1332894fe8b4651e1aab587d12.html", "vignettes/search.html")
+}
+
+knitr::include_url("vignettes/search.html")
 ```
 
 ...your example here!

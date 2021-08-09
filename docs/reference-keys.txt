@@ -1,11 +1,12 @@
 tab:Summaryweather
 prerequisites
 whats-in-here
-for-my-reference
+to-download-and-use-the-code
 preamble
 some-introductory-functions
 first-were-going-to-load-libraries
 examples-of-analysing-data-in-r
+useful-other-tools-or-snippets-of-code
 garmin
 walking-data-and-covid-impacts
 your-location

@@ -37,9 +37,10 @@ There are: Some vignettes (next), two sample AT2 templates, there is also a thir
 There are learnr packages I'll include at some point. 
 
 
-## For my reference
+## To download and use the code...
+And code for the book can be found <https://github.com/sjgknight/dsi>
 ```{r serve}
-#To preview book use the below
+#If you've downloaded the code for the book, you can preview it by running the line below 
 #bookdown:::serve_book()
 ```
 

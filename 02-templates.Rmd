@@ -1,0 +1,26 @@
+---
+title: "02-template-intro"
+author: "sjgknight"
+date: "09/08/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Introduction to the AT2 Templates
+
+For your AT2 assignment we ask you to submit your report as a *knitted* file. You **do not** have to write any `r` code to do this. At simplest, you can create all your analysis (data, visualisations) in other programs, and use `rstudio` and `markdown` to embed these, and format your document.
+
+RStudio has made this a lot simpler recently because there is now an inbuilt visual editor (I'm using it right now and it looks almost exactly like a Word document!). Even if you use this view, you should still get familiar with the basics of `markdown`...for example, these little chunks with a grey background are introduced by using the \\\` key (top left on my keyboard) before and after the code example. To make something **bold, we use** \\\* **before and after the words,** and so on.
+
+We've created some templates to help with this, and they are organised by complexity in the next Chapters.
+
+You can download each of these as Project files.
+
+1.  
+
+```{r}
+
+
+
+```
