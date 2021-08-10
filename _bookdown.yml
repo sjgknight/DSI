@@ -4,12 +4,13 @@ language:
   chapter_name: "Chapter "
 delete_merged_file: false
 output_dir: "docs"
-rmd_files:
-  html: ["index.Rmd",
-  "01-demo.Rmd",
-  "02-templates.Rmd",
-  "02-templates.Rmd",
-  "02-01-templates.Rmd",
-  "02-02-templates.Rmd",
-  "02-03-templates.Rmd",
-  "06-references.Rmd"]
+# rmd_files:
+#   html: ["index.Rmd",
+#   "01-demo.Rmd",
+#   "02-templates.Rmd",
+#   "02-templates.Rmd",
+#   "02-01-templates.Rmd",
+#   "02-02-templates.Rmd",
+#   "02-03-templates.Rmd",
+#   "03-learnr.Rmd",
+#   "06-references.Rmd"]

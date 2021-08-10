@@ -5,7 +5,10 @@ account: sjgknight
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4473808
-bundleId: 4905798
+bundleId: 4906146
 url: https://sjgknight.shinyapps.io/matchR2/
-when: 1628555210.17752
-lastSyncTime: 1628555210.17752
+when: 1628566233.00622
+lastSyncTime: 1628566233.00622
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .nojekyll|_bookdown.yml|_bookdown_files/desktop.ini|_output.yml|01-demo.Rmd|02-01-templates.Rmd|02-02-templates.Rmd|02-03-templates.Rmd|02-templates.Rmd|03-learnr.Rmd|03-template-vsimp.Rmd|06-references.Rmd|36100-Data-Science-for-Innovation.Rmd|36100 Data Science for Innovation.Rmd|book.bib|cleaning.Rmd|desktop.ini|index.Rmd|packages.bib|preamble.tex|prerequisites.html|private/desktop.ini|private/keys.R|README.md|style.css|Template_nav.Rmd|toc.css|_book|36100-Data-Science-for-Innovation_files|data|docs|Materials|vignettes
