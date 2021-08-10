@@ -51,3 +51,8 @@ example-analysis-tidy-data
 example-analysis-create-charts-for-presentation
 findings-and-conclusion
 flexdashboard-note---more-advanced-and-this-isnt-a-proper-functioning-example
+learnr-activities
+setting-up
+downloading-the-resources
+getting-the-files
+creating-and-opening-projects

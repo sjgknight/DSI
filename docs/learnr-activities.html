@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 learnr activities | R Notebook</title>
+  <meta name="description" content="This is some of the materials we’ll use in the class. These materials were published with the package bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 learnr activities | R Notebook" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is some of the materials we’ll use in the class. These materials were published with the package bookdown::gitbook." />
+  <meta name="github-repo" content="sjgknight/dsi" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 learnr activities | R Notebook" />
+  
+  <meta name="twitter:description" content="This is some of the materials we’ll use in the class. These materials were published with the package bookdown::gitbook." />
+  
+
+<meta name="author" content="Simon Knight" />
+
+
+<meta name="date" content="2021-08-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="flexdashboard-note-more-advanced-and-this-isnt-a-proper-functioning-example.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">36100 Data Science for Innovation materials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#whats-in-here"><i class="fa fa-check"></i><b>1.1</b> What’s in here?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#to-download-and-use-the-code"><i class="fa fa-check"></i><b>1.2</b> To download and use the code…</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="preamble.html"><a href="preamble.html"><i class="fa fa-check"></i><b>2</b> Preamble</a></li>
+<li class="chapter" data-level="3" data-path="some-introductory-functions.html"><a href="some-introductory-functions.html"><i class="fa fa-check"></i><b>3</b> Some introductory functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="some-introductory-functions.html"><a href="some-introductory-functions.html#first-were-going-to-load-libraries"><i class="fa fa-check"></i><b>3.1</b> First, we’re going to load libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html"><i class="fa fa-check"></i><b>4</b> Examples of analysing data in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#useful-other-tools-or-snippets-of-code"><i class="fa fa-check"></i><b>4.1</b> Useful other tools or snippets of code</a></li>
+<li class="chapter" data-level="4.2" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#garmin"><i class="fa fa-check"></i><b>4.2</b> Garmin</a></li>
+<li class="chapter" data-level="4.3" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#walking-data-and-covid-impacts"><i class="fa fa-check"></i><b>4.3</b> Walking data (and covid impacts)</a></li>
+<li class="chapter" data-level="4.4" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#your-location"><i class="fa fa-check"></i><b>4.4</b> Your location</a></li>
+<li class="chapter" data-level="4.5" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#text-mining-demo"><i class="fa fa-check"></i><b>4.5</b> Text mining demo</a></li>
+<li class="chapter" data-level="4.6" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#sentiment-on-text"><i class="fa fa-check"></i><b>4.6</b> Sentiment on text</a></li>
+<li class="chapter" data-level="4.7" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#named-entity-recognition"><i class="fa fa-check"></i><b>4.7</b> Named entity recognition</a></li>
+<li class="chapter" data-level="4.8" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#image-processing-images"><i class="fa fa-check"></i><b>4.8</b> Image processing Images</a></li>
+<li class="chapter" data-level="4.9" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#eda-and-descriptive-statistics"><i class="fa fa-check"></i><b>4.9</b> EDA and Descriptive Statistics</a></li>
+<li class="chapter" data-level="4.10" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#other-fun-examples"><i class="fa fa-check"></i><b>4.10</b> Other fun examples</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#search-history"><i class="fa fa-check"></i><b>4.10.1</b> search history</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-the-at2-templates.html"><a href="introduction-to-the-at2-templates.html"><i class="fa fa-check"></i><b>5</b> Introduction to the AT2 Templates</a></li>
+<li class="chapter" data-level="6" data-path="simplified-very-template.html"><a href="simplified-very-template.html"><i class="fa fa-check"></i><b>6</b> Simplified (very) template</a></li>
+<li class="chapter" data-level="7" data-path="simplified-template.html"><a href="simplified-template.html"><i class="fa fa-check"></i><b>7</b> Simplified Template</a></li>
+<li class="chapter" data-level="8" data-path="flexdashboard-note-more-advanced-and-this-isnt-a-proper-functioning-example.html"><a href="flexdashboard-note-more-advanced-and-this-isnt-a-proper-functioning-example.html"><i class="fa fa-check"></i><b>8</b> FlexDashboard (note - more advanced, and this isn’t a proper functioning example)</a></li>
+<li class="chapter" data-level="9" data-path="learnr-activities.html"><a href="learnr-activities.html"><i class="fa fa-check"></i><b>9</b> learnr activities</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="learnr-activities.html"><a href="learnr-activities.html#setting-up"><i class="fa fa-check"></i><b>9.1</b> Setting up</a></li>
+<li class="chapter" data-level="9.2" data-path="learnr-activities.html"><a href="learnr-activities.html#downloading-the-resources"><i class="fa fa-check"></i><b>9.2</b> Downloading the resources</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="learnr-activities.html"><a href="learnr-activities.html#getting-the-files"><i class="fa fa-check"></i><b>9.2.1</b> Getting the files</a></li>
+<li class="chapter" data-level="9.2.2" data-path="learnr-activities.html"><a href="learnr-activities.html#creating-and-opening-projects"><i class="fa fa-check"></i><b>9.2.2</b> Creating and opening projects</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="simplified-very-template.html"><a href="simplified-very-template.html#references"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Notebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="learnr-activities" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> learnr activities</h1>
+<div id="setting-up" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Setting up</h2>
+<p>We’re going to embed some learnr activities now. The first one is “live” on the shinyapps.io server. It will walk you through setting up and running the other later tasks.</p>
+<p>To do this, You’re going to download RStudio (if you haven’t already). Follow the tutorial below to do that.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="learnr-activities.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::include_url(&quot;https://learnr-examples.shinyapps.io/ex-setup-r/&quot;)</span></span>
+<span id="cb24-2"><a href="learnr-activities.html#cb24-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_app</span>(<span class="st">&quot;https://learnr-examples.shinyapps.io/ex-setup-r/&quot;</span>, <span class="at">height =</span> <span class="st">&quot;600px&quot;</span>)</span></code></pre></div>
+<iframe src="https://learnr-examples.shinyapps.io/ex-setup-r/?showcase=0" width="100%" height="600px">
+</iframe>
+</div>
+<div id="downloading-the-resources" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Downloading the resources</h2>
+<div id="getting-the-files" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Getting the files</h3>
+<p>Ok, now we’re going to download these files from github, and run something.</p>
+<ol style="list-style-type: decimal">
+<li><p>The code for this book is available at <a href="https://github.com/sjgknight/dsi/" class="uri">https://github.com/sjgknight/dsi/</a> You can download a set of interactive <em>tutorials</em> from <a href="https://github.com/sjgknight/learnr" class="uri">https://github.com/sjgknight/learnr</a> most of these were built by the great RStudio team and collaborators.</p></li>
+<li><p>There are three ways you can get the code:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>The easiest:</strong> Go to <a href="https://github.com/sjgknight/learnr">that repository</a>, on the right hand side you’ll see “code” - click that, and “download zip” (or, <a href="https://github.com/sjgknight/learnr/archive/refs/heads/master.zip">direct link</a>)<img src="data/dldzip.PNG" alt="Screenshot of github page, on the right there is a green code box, clicking that opens a menu to download a zip of the project code." /></p></li>
+<li><p><strong>Medium level:</strong> You can do the same thing using <code>R</code>. Now you’ve got <code>R</code> installed, you can run the code below to do this.</p></li>
+<li><p><strong>Git-method:</strong> If you’re using git anyway (or, going to learn in Stats, Data Science Practice, or another subject) you might like to link the project to the repo, there are instructions for that at <a href="https://happygitwithr.com/new-github-first.html">Happy Git and GitHub for the useR</a>.</p></li>
+</ol></li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="learnr-activities.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> <span class="st">&quot;https://github.com/sjgknight/learnr/archive/refs/heads/master.zip&quot;</span>, <span class="at">destfile =</span> <span class="st">&quot;dsi-learnr.zip&quot;</span>)  <span class="co">#if you want the book too, you can uncomment this line</span></span>
+<span id="cb25-2"><a href="learnr-activities.html#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="learnr-activities.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># unzip the .zip file</span></span>
+<span id="cb25-4"><a href="learnr-activities.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> <span class="st">&quot;dsi-learnr.zip&quot;</span>)</span>
+<span id="cb25-5"><a href="learnr-activities.html#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="learnr-activities.html#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="do">#########################################################</span></span>
+<span id="cb25-7"><a href="learnr-activities.html#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co">#download.file(url = &quot;https://github.com/sjgknight/DSI/archive/refs/heads/main.zip&quot;, destfile = &quot;dsi.zip&quot;)  #if you want the book too, you can uncomment this line</span></span></code></pre></div>
+</div>
+<div id="creating-and-opening-projects" class="section level3" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Creating and opening projects</h3>
+<p><code>RStudio</code> helps you manage projects. Make sure the download is unzipped in a location you want it on your machine:</p>
+<ol style="list-style-type: decimal">
+<li>If you’ve downloaded an existing project, you might find the .Rproj file, and click that <img src="data/proj.PNG" alt="shows an image of the .Rproj logo" /></li>
+<li>Now you’re inside a project. Projects help you organise your work. They are associated with <em>directories</em> and their subdirectories. You can create new ones under the ‘File’ menu.</li>
+<li>Now you’ve opened the project, go to the instructions Rmd, open it, and follow along from there <img src="C:/Users/125295_admin/AppData/Local/rstudio/tmp/paste-9DB9E419.png" /></li>
+</ol>
+
+<p>In the template file, this line (wrapped in ``) is used to insert the references. Testing to see if just using the heading works, with a hash before the reference. r if (knitr::is_html_output()) ’ References {-}’</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="flexdashboard-note-more-advanced-and-this-isnt-a-proper-functioning-example.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-learnr.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["36100 Data Science for Innovation.pdf", "36100 Data Science for Innovation.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
