@@ -22,18 +22,19 @@ To do this, You're going to download RStudio (if you haven't already), along wit
 This one...
 
 ```{r learnr_matchr}
+#You should have this directory locally, and so the first line will work.  If you want to check you have the most current version, uncomment the github lines and run that. 
 
 if (interactive()) {
   rmarkdown::run("matchr/snippet_matchR_clustered.Rmd")
   }
 
 ## Only run this example in interactive R sessions
-if (interactive()) {
-  shiny::runGitHub(repo = "dsi", 
-          username = "sjgknight",
-          ref = "main",
-          subdir = "matchr/")
-  }
+# if (interactive()) {
+#   shiny::runGitHub(repo = "dsi", 
+#           username = "sjgknight",
+#           ref = "main",
+#           subdir = "matchr/")
+#   }
 
 ```
 
