@@ -1,0 +1,58 @@
+---
+output:
+  html_document:
+    df_print: paged
+---
+
+# learnr activities
+
+## Setting up
+
+We're going to embed some learnr activities now.  The first one is "live" on the shinyapps.io server.  It will walk you through setting up and running the other later tasks. 
+
+To do this, You're going to download RStudio (if you haven't already), along with the source for this book. 
+
+```{r}
+
+```
+
+
+## MatchR
+
+This one...
+
+```{r learnr_matchr}
+
+if (interactive()) {
+  rmarkdown::run("matchr/snippet_matchR_clustered.Rmd")
+  }
+
+## Only run this example in interactive R sessions
+if (interactive()) {
+  shiny::runGitHub(repo = "dsi", 
+          username = "sjgknight",
+          ref = "main",
+          subdir = "matchr/")
+  }
+
+```
+
+## CleanR
+
+This one...
+
+```{r learnr-clearnr}
+
+```
+
+
+```{r deploy, eval=FALSE, include=FALSE}
+rsconnect::listBundleFiles("matchR/")
+rsconnect::deployApp(appFiles = c("matchR/snippet_matchR_clustered.Rmd","matchR/snippet_matchR_clustered.html"), appName = "matchR", appTitle = "matchR")
+
+rsconnect::deployApp(appDir = "matchR/")
+
+#Within a file we use:
+runtime: shinyrmd 
+```
+
