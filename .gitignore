@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-
 # Created by https://www.toptal.com/developers/gitignore/api/r
 # Edit at https://www.toptal.com/developers/gitignore?templates=r
 ### R ###
@@ -40,5 +39,4 @@ po/*~
 /*_files/
 # End of https://www.toptal.com/developers/gitignore/api/r
 /private/
-/private/
-/private/
+*.desktop.ini

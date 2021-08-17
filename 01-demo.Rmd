@@ -204,6 +204,36 @@ Show some...
 ```{r EDA}
 ```
 
+## QS_Ledger (a set of Python modules)
+The repo at https://github.com/markwk/qs_ledger is a set of Python scripts to get data as below. I've included this as a `submodule` in git, in the vignettes directory.  At time of writing this included:
+
+
+* Apple Health: fitness and health tracking, data analysis and dashboard from iPhone or Apple Watch (includes example of Elastic Search integration and Kibana Health Dashboard).
+* AutoSleep: iOS sleep tracking data analysis of sleep per night and rolling averages.
+* Fitbit: fitness and health tracking and analysis of Steps, Sleep, and Heart Rate from a Fitbit wearable.
+* GoodReads: book reading tracking and data analysis for GoodReads.
+* Google Calendar: past events, meetings and times for Google Calendar.
+* Google Sheets: get data from any Google Sheet which can be useful for pulling data from IFTTT integrations that add data.
+* Habitica: habit and task tracking with Habitica's gamified approach to task management.
+* Instapaper: articles read and highlighted passages from Instapaper.
+* Kindle Highlights: Parser and Highlight Extract from Kindle clippings, along with a sample data analysis and tool to export highlights to separate markdown files.
+* Last.fm: music tracking and analysis of music listening history from Last.fm.
+* Oura: oura ring activity, sleep and wellness data.
+* RescueTime: track computer usage and analysis of computer activities and time with RescueTime.
+* Pocket: articles read and read count from Pocket.
+* Strava: activities downloader (runs, cycling, swimming, etc.) and analysis from Strava.
+* Todoist: task tracking and analysis of todo's and tasks completed history from Todoist app.
+* Toggl: time tracking and analysis of manual timelog entries from Toggl.
+* WordCounter: extract wordcounter app history and visualize recent periods of word counts.
+
+## Social media analysis
+There are lots of tools for analysing social media data, including ones that do not require any coding skill. 
+
+
+For facebook data two easy approaches are:
+* you can extract ad data https://github.com/RitwikGA/FacebookReportingTool 
+* analyse your 'likes' for personality https://applymagicsauce.com/demo 
+
 ## Other fun examples
 ### search history
 ```{r search}
@@ -214,5 +244,6 @@ if(!file.exists("vignettes/search.html")){
 
 knitr::include_url("vignettes/search.html")
 ```
+
 
 ...your example here!
