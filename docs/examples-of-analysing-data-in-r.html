@@ -24,7 +24,7 @@
 <meta name="author" content="Simon Knight" />
 
 
-<meta name="date" content="2021-08-10" />
+<meta name="date" content="2021-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -180,9 +180,11 @@ div.csl-indent {
 <li class="chapter" data-level="4.7" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#named-entity-recognition"><i class="fa fa-check"></i><b>4.7</b> Named entity recognition</a></li>
 <li class="chapter" data-level="4.8" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#image-processing-images"><i class="fa fa-check"></i><b>4.8</b> Image processing Images</a></li>
 <li class="chapter" data-level="4.9" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#eda-and-descriptive-statistics"><i class="fa fa-check"></i><b>4.9</b> EDA and Descriptive Statistics</a></li>
-<li class="chapter" data-level="4.10" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#other-fun-examples"><i class="fa fa-check"></i><b>4.10</b> Other fun examples</a>
+<li class="chapter" data-level="4.10" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#qs_ledger-a-set-of-python-modules"><i class="fa fa-check"></i><b>4.10</b> QS_Ledger (a set of Python modules)</a></li>
+<li class="chapter" data-level="4.11" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#social-media-analysis"><i class="fa fa-check"></i><b>4.11</b> Social media analysis</a></li>
+<li class="chapter" data-level="4.12" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#other-fun-examples"><i class="fa fa-check"></i><b>4.12</b> Other fun examples</a>
 <ul>
-<li class="chapter" data-level="4.10.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#search-history"><i class="fa fa-check"></i><b>4.10.1</b> search history</a></li>
+<li class="chapter" data-level="4.12.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#search-history"><i class="fa fa-check"></i><b>4.12.1</b> search history</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="introduction-to-the-at2-templates.html"><a href="introduction-to-the-at2-templates.html"><i class="fa fa-check"></i><b>5</b> Introduction to the AT2 Templates</a></li>
@@ -198,7 +200,7 @@ div.csl-indent {
 <li class="chapter" data-level="9.2.2" data-path="learnr-activities.html"><a href="learnr-activities.html#creating-and-opening-projects"><i class="fa fa-check"></i><b>9.2.2</b> Creating and opening projects</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="simplified-very-template.html"><a href="simplified-very-template.html#references"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="chapter" data-level="10" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -352,10 +354,40 @@ div.csl-indent {
 <h2><span class="header-section-number">4.9</span> EDA and Descriptive Statistics</h2>
 <p>Show some…</p>
 </div>
-<div id="other-fun-examples" class="section level2" number="4.10">
-<h2><span class="header-section-number">4.10</span> Other fun examples</h2>
-<div id="search-history" class="section level3" number="4.10.1">
-<h3><span class="header-section-number">4.10.1</span> search history</h3>
+<div id="qs_ledger-a-set-of-python-modules" class="section level2" number="4.10">
+<h2><span class="header-section-number">4.10</span> QS_Ledger (a set of Python modules)</h2>
+<p>The repo at <a href="https://github.com/markwk/qs_ledger" class="uri">https://github.com/markwk/qs_ledger</a> is a set of Python scripts to get data as below. I’ve included this as a <code>submodule</code> in git, in the vignettes directory. At time of writing this included:</p>
+<ul>
+<li>Apple Health: fitness and health tracking, data analysis and dashboard from iPhone or Apple Watch (includes example of Elastic Search integration and Kibana Health Dashboard).</li>
+<li>AutoSleep: iOS sleep tracking data analysis of sleep per night and rolling averages.</li>
+<li>Fitbit: fitness and health tracking and analysis of Steps, Sleep, and Heart Rate from a Fitbit wearable.</li>
+<li>GoodReads: book reading tracking and data analysis for GoodReads.</li>
+<li>Google Calendar: past events, meetings and times for Google Calendar.</li>
+<li>Google Sheets: get data from any Google Sheet which can be useful for pulling data from IFTTT integrations that add data.</li>
+<li>Habitica: habit and task tracking with Habitica’s gamified approach to task management.</li>
+<li>Instapaper: articles read and highlighted passages from Instapaper.</li>
+<li>Kindle Highlights: Parser and Highlight Extract from Kindle clippings, along with a sample data analysis and tool to export highlights to separate markdown files.</li>
+<li>Last.fm: music tracking and analysis of music listening history from Last.fm.</li>
+<li>Oura: oura ring activity, sleep and wellness data.</li>
+<li>RescueTime: track computer usage and analysis of computer activities and time with RescueTime.</li>
+<li>Pocket: articles read and read count from Pocket.</li>
+<li>Strava: activities downloader (runs, cycling, swimming, etc.) and analysis from Strava.</li>
+<li>Todoist: task tracking and analysis of todo’s and tasks completed history from Todoist app.</li>
+<li>Toggl: time tracking and analysis of manual timelog entries from Toggl.</li>
+<li>WordCounter: extract wordcounter app history and visualize recent periods of word counts.</li>
+</ul>
+</div>
+<div id="social-media-analysis" class="section level2" number="4.11">
+<h2><span class="header-section-number">4.11</span> Social media analysis</h2>
+<p>There are lots of tools for analysing social media data, including ones that do not require any coding skill.</p>
+<p>For facebook data two easy approaches are:
+* you can extract ad data <a href="https://github.com/RitwikGA/FacebookReportingTool" class="uri">https://github.com/RitwikGA/FacebookReportingTool</a>
+* analyse your ‘likes’ for personality <a href="https://applymagicsauce.com/demo" class="uri">https://applymagicsauce.com/demo</a></p>
+</div>
+<div id="other-fun-examples" class="section level2" number="4.12">
+<h2><span class="header-section-number">4.12</span> Other fun examples</h2>
+<div id="search-history" class="section level3" number="4.12.1">
+<h3><span class="header-section-number">4.12.1</span> search history</h3>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="examples-of-analysing-data-in-r.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">file.exists</span>(<span class="st">&quot;vignettes/search.html&quot;</span>)){</span>
 <span id="cb20-2"><a href="examples-of-analysing-data-in-r.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(<span class="st">&quot;https://rstudio-pubs-static.s3.amazonaws.com/359000_436aec1332894fe8b4651e1aab587d12.html&quot;</span>, <span class="st">&quot;vignettes/search.html&quot;</span>)</span>
 <span id="cb20-3"><a href="examples-of-analysing-data-in-r.html#cb20-3" aria-hidden="true" tabindex="-1"></a>}</span>

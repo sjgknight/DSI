@@ -54,3 +54,4 @@ knitr::write_bib(c(
 ), 'packages.bib')
 #This passes a list of all packages loaded in the current session to write_bib, which writes the citations to "packages.bib" Notice we've separated "book.bib" from "packages.bib", so this works for packages, and you can create your book.bib manually
 ```
+

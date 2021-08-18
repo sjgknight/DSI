@@ -17,3 +17,4 @@ if(!file.exists("vignettes/flex_junk.html")){
 knitr::include_url("vignettes/flex_junk.html")
 
 ```
+

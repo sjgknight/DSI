@@ -52,7 +52,7 @@ unzip(zipfile = "dsi-learnr.zip")
 
 1.  If you've downloaded an existing project, you might find the .Rproj file, and click that ![shows an image of the .Rproj logo](data/proj.PNG)
 2.  Now you're inside a project. Projects help you organise your work. They are associated with *directories* and their subdirectories. You can create new ones under the 'File' menu.
-3.  Now you've opened the project, go to the instructions Rmd, open it, and follow along from there ![](C:/Users/125295_admin/AppData/Local/RStudio/tmp/paste-9DB9E419.png)
+3.  Now you've opened the project, go to the instructions Rmd, open it, and follow along from there ![Shows file pane in RStudio with 'instructions.Rmd' highlighted](data/instructionsrmd.PNG)
 
 ```{r deploy, eval=FALSE, include=FALSE}
 #This is just some notes for Simon about different ways to deploy, it isn't executed

@@ -14,6 +14,8 @@ sentiment-on-text
 named-entity-recognition
 image-processing-images
 eda-and-descriptive-statistics
+qs_ledger-a-set-of-python-modules
+social-media-analysis
 other-fun-examples
 search-history
 introduction-to-the-at2-templates
@@ -26,7 +28,7 @@ analysis
 findings-and-conclusions
 discussion
 reflection
-references
+vsimplified_refs
 appendices
 other
 the-odi-canvas
@@ -50,9 +52,11 @@ example-analysis-explore-data-via-statistical-summaries
 example-analysis-tidy-data
 example-analysis-create-charts-for-presentation
 findings-and-conclusion
+simplified_refs
 flexdashboard-note---more-advanced-and-this-isnt-a-proper-functioning-example
 learnr-activities
 setting-up
 downloading-the-resources
 getting-the-files
 creating-and-opening-projects
+references
