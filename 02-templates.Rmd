@@ -10,15 +10,7 @@ For your AT2 assignment we ask you to submit your report as a *knitted* file. Yo
 
 RStudio has made this a lot simpler recently because there is now an inbuilt visual editor (I'm using it right now and it looks almost exactly like a Word document!). Even if you use this view, you should still get familiar with the basics of `markdown`...for example, these little chunks with a grey background are introduced by using the \\\` key (top left on my keyboard) before and after the code example. To make something **bold, we use** \\\* **before and after the words,** and so on.
 
-We've created some templates to help with this, and they are organised by complexity in the next Chapters.
+We've created a template to help with this.
 
-You can download each of these as Project files, either at the guthub repository <https://github.com/sjgknight/DSI-templates> or via drive <https://tinyurl.com/DSIAT2Template> (they should be in sync).
-
-You can see what they look like in the next chapters.
-
-1.  Simplified (very) Template is an introductory one
-
-2.  Simplified Template (suggest using this one if you're happy to play around a bit more, but it's still pretty easy to learn)
-
-3.  FlexDashboard (note - more advanced, and this isn't a proper functioning example) (more advanced...so much so, I couldn't get a functional example working well, so you'd have to be ok fixing it up. You can also embed these in other documents, like this).
+You can download this as a Project file, either at the guthub repository <https://github.com/sjgknight/DSI-templates> or via drive <https://tinyurl.com/DSIAT2Template> (they should be in sync).
 

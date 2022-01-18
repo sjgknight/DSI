@@ -69,6 +69,7 @@ output:
 The aim of this file is to show you some basic functionality of an Rmd, and some of the kinds of analysis you might do.  It's not intended to be exhaustive, it's just to stimulate ideas.  
 
 # Some introductory functions
+
 This is an export of an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you access the raw notebook, you can execute code within the notebook on your computer and the results appear beneath the code. 
 
 If you have downloaded the code, you can try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
@@ -90,6 +91,7 @@ If you have downloaded the code, you can try executing this chunk by clicking th
 ```
 
 ## First, we're going to load libraries
+
 Normally you'd hide the code chunk below, but in this instance we'll keep it there.
 ```{r load-libraries, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyverse)  #loads ggplot2, stringr,
@@ -138,6 +140,7 @@ There are also free tools that will analyse text and images (although possibly n
 Most of the examples below are from MDSI students (a couple from me, and a few externals).
 
 ## Useful other tools or snippets of code
+
 You might also find these few posts useful:
 
 * An Introduction to Accessing RESTful APIs Using R, by Werner Schott, March 31, 2019: In the past, working in R has meant importing data into the application from numerous sources. I have found this very manual and not very reproducible in the development of applications. One of the weaknesses I have identified and would like to address is to understand how to access online data resources using the appropriate packages in R. The scope of this exercise is not to master the use of one package or several packages, but rather understand how certain R packages fit into the overall process, and what that process is. http://rpubs.com/plantagenet/481658  
@@ -145,11 +148,12 @@ You might also find these few posts useful:
 * https://github.com/thomasp85/gganimate  - this is very cool, create animated gif visualisations http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html - nice examples of a bunch of ggplot charts
 * Create sonified data (using audio to represent the shape of data, as we use visualisation) http://playitbyr.org/ 
 * https://cran.r-project.org/web/packages/googleway/vignettes/googleway-vignette.html - connect to a variety of google map based services
-* Corplot is nice, but you probably dont need it for DSI http://rpubs.com/dev_chilwal/481439  
 * Want to visualise your web history?  Here’s one way to do that https://www.webhistorian.org/education/ 
 * Some time ago I saw a blog post on visualising your twitter history using streamgraphs in R. As my tweets moved from mostly psychology/philosophy tweeting around my teaching, through to my current mish-mash of learning analytics stuff, I thought it’d be interesting to play with this. So, here’s the code reproduced, plus my streamgraph. http://sjgknight.com/finding-knowledge/2016/01/visualising-twitter-history/ 
 
 Remember, not all of these approaches are _good_ or _sensible_ approaches, consider how you use standard features like tables and reporting numbers, and don't go overboard with complex visualisations. 
+
+## gganimate
 
 ```{r ggan_example, out.width = "100%"}
 if(!file.exists("vignettes/gganimate.html")){
@@ -160,7 +164,6 @@ if(!file.exists("vignettes/gganimate.html")){
 knitr::include_url("vignettes/gganimate.html")
 
 ```
-
 
 
 ## Garmin
@@ -294,6 +297,8 @@ For facebook data two easy approaches are:
 * you can extract ad data https://github.com/RitwikGA/FacebookReportingTool 
 * analyse your 'likes' for personality https://applymagicsauce.com/demo 
 
+This post [describes working with your Facebook download data in R](http://www.deeplytrivial.com/2018/06/working-with-your-facebook-data-in-r.html?m=1)
+
 ## Other fun examples
 ### search history
 ```{r search}
@@ -322,76 +327,12 @@ For your AT2 assignment we ask you to submit your report as a *knitted* file. Yo
 
 RStudio has made this a lot simpler recently because there is now an inbuilt visual editor (I'm using it right now and it looks almost exactly like a Word document!). Even if you use this view, you should still get familiar with the basics of `markdown`...for example, these little chunks with a grey background are introduced by using the \\\` key (top left on my keyboard) before and after the code example. To make something **bold, we use** \\\* **before and after the words,** and so on.
 
-We've created some templates to help with this, and they are organised by complexity in the next Chapters.
+We've created a template to help with this.
 
-You can download each of these as Project files, either at the guthub repository <https://github.com/sjgknight/DSI-templates> or via drive <https://tinyurl.com/DSIAT2Template> (they should be in sync).
-
-You can see what they look like in the next chapters.
-
-1.  Simplified (very) Template is an introductory one
-
-2.  Simplified Template (suggest using this one if you're happy to play around a bit more, but it's still pretty easy to learn)
-
-3.  FlexDashboard (note - more advanced, and this isn't a proper functioning example) (more advanced...so much so, I couldn't get a functional example working well, so you'd have to be ok fixing it up. You can also embed these in other documents, like this).
+You can download this as a Project file, either at the guthub repository <https://github.com/sjgknight/DSI-templates> or via drive <https://tinyurl.com/DSIAT2Template> (they should be in sync).
 
 
 <!--chapter:end:02-templates.Rmd-->
-
----
-output:
-  html_document:
-    df_print: paged
----
-
-# Simplified (very) template
-
-```{r verysimplified}
-
-htmltools::includeHTML("https://raw.githubusercontent.com/sjgknight/DSI-templates/main/AT2_very_simplified/template_very_simplified.html")
-
-```
-
-
-<!--chapter:end:02-01-templates.Rmd-->
-
----
-output:
-  html_document:
-    df_print: paged
----
-
-# Simplified Template
-
-```{r simplified}
-
-htmltools::includeHTML("https://raw.githubusercontent.com/sjgknight/DSI-templates/main/AT2_simplified-master/R/template_simplified.html")
-```
-
-
-<!--chapter:end:02-02-templates.Rmd-->
-
----
-output:
-  html_document:
-    df_print: paged
----
-
-# FlexDashboard (note - more advanced, and this isn't a proper functioning example) 
-
-```{r flexy}
-#htmltools::includeHTML("https://raw.githubusercontent.com/sjgknight/DSI-templates/main/AT2_flex_demo/AT2_Template.html")
-#See on Rpubs http://rpubs.com/sjgknight/flex_junk
-
-if(!file.exists("vignettes/flex_junk.html")){
-  download.file("https://raw.githubusercontent.com/sjgknight/DSI-templates/main/AT2_flex_demo/AT2_template.html", "vignettes/flex_junk.html")
-}
-
-knitr::include_url("vignettes/flex_junk.html")
-
-```
-
-
-<!--chapter:end:02-03-templates.Rmd-->
 
 ---
 output:
@@ -430,14 +371,11 @@ Ok, now we're going to download these files from github, and run something.
 
     3.  **Git-method:** If you're using git anyway (or, going to learn in Stats, Data Science Practice, or another subject) you might like to link the project to the repo, there are instructions for that at [Happy Git and GitHub for the useR](https://happygitwithr.com/new-github-first.html).
 
-```{r getbook}
+```{r getbook, eval=F}
 download.file(url = "https://github.com/sjgknight/learnr/archive/refs/heads/master.zip", destfile = "dsi-learnr.zip")  #if you want the book too, you can uncomment this line
 
 # unzip the .zip file
 unzip(zipfile = "dsi-learnr.zip")
-
-#########################################################
-#download.file(url = "https://github.com/sjgknight/DSI/archive/refs/heads/main.zip", destfile = "dsi.zip")  #if you want the book too, you can uncomment this line
 
 ```
 
@@ -472,18 +410,6 @@ runtime: shinyrmd
 https://oddhypothesis.blogspot.com/2016/04/desktop-deployr.html
 ```
 
+
 <!--chapter:end:03-learnr.Rmd-->
-
----
-output: bookdown::html_document2
----
-
-In the template file, this line (wrapped in \`\`) is used to insert the references. Testing to see if just using the heading works, with a hash before the reference. r if (knitr::is_html_output()) ' References {-}'
-
-# References
-
-::: {#refs}
-:::
-
-<!--chapter:end:06-references.Rmd-->
 

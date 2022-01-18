@@ -1,0 +1,14 @@
+name: snippet_matchR
+title: snippet_matchR
+username:
+account: sjgknight
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4444441
+bundleId: 4876467
+url: https://sjgknight.shinyapps.io/Snippet_matchR/
+when: 1627799385.9742
+lastSyncTime: 1627799385.9742
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data/desktop.ini|demo.nb.html|demo.Rmd|desktop.ini|Snippet_match_embed.nb.html|Snippet_match_embed.Rmd|snippet_matchR.html|snippet_matchR_files|Templates

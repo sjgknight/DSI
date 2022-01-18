@@ -35,14 +35,11 @@ Ok, now we're going to download these files from github, and run something.
 
     3.  **Git-method:** If you're using git anyway (or, going to learn in Stats, Data Science Practice, or another subject) you might like to link the project to the repo, there are instructions for that at [Happy Git and GitHub for the useR](https://happygitwithr.com/new-github-first.html).
 
-```{r getbook}
+```{r getbook, eval=F}
 download.file(url = "https://github.com/sjgknight/learnr/archive/refs/heads/master.zip", destfile = "dsi-learnr.zip")  #if you want the book too, you can uncomment this line
 
 # unzip the .zip file
 unzip(zipfile = "dsi-learnr.zip")
-
-#########################################################
-#download.file(url = "https://github.com/sjgknight/DSI/archive/refs/heads/main.zip", destfile = "dsi.zip")  #if you want the book too, you can uncomment this line
 
 ```
 
@@ -76,3 +73,4 @@ runtime: shinyrmd
 #You can package shinyapps as standalone for people to execute on their machines, per below
 https://oddhypothesis.blogspot.com/2016/04/desktop-deployr.html
 ```
+

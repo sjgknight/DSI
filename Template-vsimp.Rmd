@@ -1,9 +1,0 @@
----
-title: "Template_nav"
-output:
-  html_document:
-    includes:
-      after_body:  <iframe src="https://raw.githubusercontent.com/sjgknight/DSI-templates/main/AT2_very_simplified/template_very_simplified.html" title="Embed of very simplified template maybe"></iframe>
----
-
-# Embed of very simplified template maybe

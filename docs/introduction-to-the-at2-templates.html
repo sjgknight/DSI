@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Introduction to the AT2 Templates | R Notebook</title>
   <meta name="description" content="This is some of the materials we’ll use in the class. These materials were published with the package bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Introduction to the AT2 Templates | R Notebook" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Simon Knight" />
 
 
-<meta name="date" content="2021-08-18" />
+<meta name="date" content="2022-01-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +32,10 @@
   
   
 <link rel="prev" href="examples-of-analysing-data-in-r.html"/>
-<link rel="next" href="simplified-very-template.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<link rel="next" href="learnr-activities.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -172,35 +172,32 @@ div.csl-indent {
 <li class="chapter" data-level="4" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html"><i class="fa fa-check"></i><b>4</b> Examples of analysing data in R</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#useful-other-tools-or-snippets-of-code"><i class="fa fa-check"></i><b>4.1</b> Useful other tools or snippets of code</a></li>
-<li class="chapter" data-level="4.2" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#garmin"><i class="fa fa-check"></i><b>4.2</b> Garmin</a></li>
-<li class="chapter" data-level="4.3" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#walking-data-and-covid-impacts"><i class="fa fa-check"></i><b>4.3</b> Walking data (and covid impacts)</a></li>
-<li class="chapter" data-level="4.4" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#your-location"><i class="fa fa-check"></i><b>4.4</b> Your location</a></li>
-<li class="chapter" data-level="4.5" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#text-mining-demo"><i class="fa fa-check"></i><b>4.5</b> Text mining demo</a></li>
-<li class="chapter" data-level="4.6" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#sentiment-on-text"><i class="fa fa-check"></i><b>4.6</b> Sentiment on text</a></li>
-<li class="chapter" data-level="4.7" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#named-entity-recognition"><i class="fa fa-check"></i><b>4.7</b> Named entity recognition</a></li>
-<li class="chapter" data-level="4.8" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#image-processing-images"><i class="fa fa-check"></i><b>4.8</b> Image processing Images</a></li>
-<li class="chapter" data-level="4.9" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#eda-and-descriptive-statistics"><i class="fa fa-check"></i><b>4.9</b> EDA and Descriptive Statistics</a></li>
-<li class="chapter" data-level="4.10" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#qs_ledger-a-set-of-python-modules"><i class="fa fa-check"></i><b>4.10</b> QS_Ledger (a set of Python modules)</a></li>
-<li class="chapter" data-level="4.11" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#social-media-analysis"><i class="fa fa-check"></i><b>4.11</b> Social media analysis</a></li>
-<li class="chapter" data-level="4.12" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#other-fun-examples"><i class="fa fa-check"></i><b>4.12</b> Other fun examples</a>
+<li class="chapter" data-level="4.2" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#gganimate"><i class="fa fa-check"></i><b>4.2</b> gganimate</a></li>
+<li class="chapter" data-level="4.3" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#garmin"><i class="fa fa-check"></i><b>4.3</b> Garmin</a></li>
+<li class="chapter" data-level="4.4" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#walking-data-and-covid-impacts"><i class="fa fa-check"></i><b>4.4</b> Walking data (and covid impacts)</a></li>
+<li class="chapter" data-level="4.5" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#your-location"><i class="fa fa-check"></i><b>4.5</b> Your location</a></li>
+<li class="chapter" data-level="4.6" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#text-mining-demo"><i class="fa fa-check"></i><b>4.6</b> Text mining demo</a></li>
+<li class="chapter" data-level="4.7" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#sentiment-on-text"><i class="fa fa-check"></i><b>4.7</b> Sentiment on text</a></li>
+<li class="chapter" data-level="4.8" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#named-entity-recognition"><i class="fa fa-check"></i><b>4.8</b> Named entity recognition</a></li>
+<li class="chapter" data-level="4.9" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#image-processing-images"><i class="fa fa-check"></i><b>4.9</b> Image processing Images</a></li>
+<li class="chapter" data-level="4.10" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#eda-and-descriptive-statistics"><i class="fa fa-check"></i><b>4.10</b> EDA and Descriptive Statistics</a></li>
+<li class="chapter" data-level="4.11" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#qs_ledger-a-set-of-python-modules"><i class="fa fa-check"></i><b>4.11</b> QS_Ledger (a set of Python modules)</a></li>
+<li class="chapter" data-level="4.12" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#social-media-analysis"><i class="fa fa-check"></i><b>4.12</b> Social media analysis</a></li>
+<li class="chapter" data-level="4.13" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#other-fun-examples"><i class="fa fa-check"></i><b>4.13</b> Other fun examples</a>
 <ul>
-<li class="chapter" data-level="4.12.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#search-history"><i class="fa fa-check"></i><b>4.12.1</b> search history</a></li>
+<li class="chapter" data-level="4.13.1" data-path="examples-of-analysing-data-in-r.html"><a href="examples-of-analysing-data-in-r.html#search-history"><i class="fa fa-check"></i><b>4.13.1</b> search history</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="introduction-to-the-at2-templates.html"><a href="introduction-to-the-at2-templates.html"><i class="fa fa-check"></i><b>5</b> Introduction to the AT2 Templates</a></li>
-<li class="chapter" data-level="6" data-path="simplified-very-template.html"><a href="simplified-very-template.html"><i class="fa fa-check"></i><b>6</b> Simplified (very) template</a></li>
-<li class="chapter" data-level="7" data-path="simplified-template.html"><a href="simplified-template.html"><i class="fa fa-check"></i><b>7</b> Simplified Template</a></li>
-<li class="chapter" data-level="8" data-path="flexdashboard-note-more-advanced-and-this-isnt-a-proper-functioning-example.html"><a href="flexdashboard-note-more-advanced-and-this-isnt-a-proper-functioning-example.html"><i class="fa fa-check"></i><b>8</b> FlexDashboard (note - more advanced, and this isn’t a proper functioning example)</a></li>
-<li class="chapter" data-level="9" data-path="learnr-activities.html"><a href="learnr-activities.html"><i class="fa fa-check"></i><b>9</b> learnr activities</a>
+<li class="chapter" data-level="6" data-path="learnr-activities.html"><a href="learnr-activities.html"><i class="fa fa-check"></i><b>6</b> learnr activities</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="learnr-activities.html"><a href="learnr-activities.html#setting-up"><i class="fa fa-check"></i><b>9.1</b> Setting up</a></li>
-<li class="chapter" data-level="9.2" data-path="learnr-activities.html"><a href="learnr-activities.html#downloading-the-resources"><i class="fa fa-check"></i><b>9.2</b> Downloading the resources</a>
+<li class="chapter" data-level="6.1" data-path="learnr-activities.html"><a href="learnr-activities.html#setting-up"><i class="fa fa-check"></i><b>6.1</b> Setting up</a></li>
+<li class="chapter" data-level="6.2" data-path="learnr-activities.html"><a href="learnr-activities.html#downloading-the-resources"><i class="fa fa-check"></i><b>6.2</b> Downloading the resources</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="learnr-activities.html"><a href="learnr-activities.html#getting-the-files"><i class="fa fa-check"></i><b>9.2.1</b> Getting the files</a></li>
-<li class="chapter" data-level="9.2.2" data-path="learnr-activities.html"><a href="learnr-activities.html#creating-and-opening-projects"><i class="fa fa-check"></i><b>9.2.2</b> Creating and opening projects</a></li>
+<li class="chapter" data-level="6.2.1" data-path="learnr-activities.html"><a href="learnr-activities.html#getting-the-files"><i class="fa fa-check"></i><b>6.2.1</b> Getting the files</a></li>
+<li class="chapter" data-level="6.2.2" data-path="learnr-activities.html"><a href="learnr-activities.html#creating-and-opening-projects"><i class="fa fa-check"></i><b>6.2.2</b> Creating and opening projects</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -225,14 +222,8 @@ div.csl-indent {
 <h1><span class="header-section-number">5</span> Introduction to the AT2 Templates</h1>
 <p>For your AT2 assignment we ask you to submit your report as a <em>knitted</em> file. You <strong>do not</strong> have to write any <code>r</code> code to do this. At simplest, you can create all your analysis (data, visualisations) in other programs, and use <code>rstudio</code> and <code>markdown</code> to embed these, and format your document.</p>
 <p>RStudio has made this a lot simpler recently because there is now an inbuilt visual editor (I’m using it right now and it looks almost exactly like a Word document!). Even if you use this view, you should still get familiar with the basics of <code>markdown</code>…for example, these little chunks with a grey background are introduced by using the \` key (top left on my keyboard) before and after the code example. To make something <strong>bold, we use</strong> \* <strong>before and after the words,</strong> and so on.</p>
-<p>We’ve created some templates to help with this, and they are organised by complexity in the next Chapters.</p>
-<p>You can download each of these as Project files, either at the guthub repository <a href="https://github.com/sjgknight/DSI-templates" class="uri">https://github.com/sjgknight/DSI-templates</a> or via drive <a href="https://tinyurl.com/DSIAT2Template" class="uri">https://tinyurl.com/DSIAT2Template</a> (they should be in sync).</p>
-<p>You can see what they look like in the next chapters.</p>
-<ol style="list-style-type: decimal">
-<li><p>Simplified (very) Template is an introductory one</p></li>
-<li><p>Simplified Template (suggest using this one if you’re happy to play around a bit more, but it’s still pretty easy to learn)</p></li>
-<li><p>FlexDashboard (note - more advanced, and this isn’t a proper functioning example) (more advanced…so much so, I couldn’t get a functional example working well, so you’d have to be ok fixing it up. You can also embed these in other documents, like this).</p></li>
-</ol>
+<p>We’ve created a template to help with this.</p>
+<p>You can download this as a Project file, either at the guthub repository <a href="https://github.com/sjgknight/DSI-templates" class="uri">https://github.com/sjgknight/DSI-templates</a> or via drive <a href="https://tinyurl.com/DSIAT2Template" class="uri">https://tinyurl.com/DSIAT2Template</a> (they should be in sync).</p>
 
 </div>
             </section>
@@ -241,11 +232,10 @@ div.csl-indent {
         </div>
       </div>
 <a href="examples-of-analysing-data-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="simplified-very-template.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="learnr-activities.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -286,7 +276,7 @@ gitbook.start({
 },
 "download": ["36100 Data Science for Innovation.pdf", "36100 Data Science for Innovation.epub"],
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
